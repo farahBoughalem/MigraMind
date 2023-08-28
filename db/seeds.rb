@@ -1,25 +1,29 @@
 puts "Deleting previous records"
 
+
 Post.destroy_all
 Event.destroy_all
 Task.destroy_all
 User.destroy_all
 
+
+
+puts "Creating 10 users😊"
+require 'faker'
+
+10.times do
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+  User.create(
+    first_name: first_name,
+    last_name: last_name,
+    username: (first_name[0] + last_name).downcase + rand(1..99).to_s,
+    email: "#{first_name}_#{last_name}@gmail.com",
+    password: "123456"
+  )
+end
+
 puts "Done too little too late 😈"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 puts "Creating posts ✏"
 
@@ -62,6 +66,7 @@ Post.create(content: "Hallo liebe Freunde! Let's discuss the experiences of LGBT
 Post.create(content: "Hallo liebe Mitbürger! Aging migrants might face unique challenges. Let's discuss resources, support networks, and healthcare options available for our elder members in Germany.", category: "Healthcare", user_id: 9)
 
 Post.create(content: "Moin moin, fitness enthusiasts! How do you stay active in Düsseldorf? Let's talk about sports clubs, fitness centers, and outdoor activities that keep us healthy and connected.", category: "Community", user_id: 10)
+
 
 puts "Creating Checklist"
 
