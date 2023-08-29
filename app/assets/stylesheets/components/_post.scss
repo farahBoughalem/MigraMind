@@ -1,0 +1,39 @@
+#post{
+  margin: 2vh auto;
+  background-color: $white;
+  border-radius: 8%;
+  border: none;
+}
+
+#post img{
+  border-radius: 50%;
+}
+
+.user-border{
+  
+}
+
+.username{
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.time{
+  margin: 0;
+  color: $dark-gray;
+  font-size: 0.8rem;
+}
+
+.interaction-icons{
+  margin-top: 4%;
+}
+
+.interaction-icons button{
+  background-color: #fcfbfd;
+  border-radius: 50%;
+  border: 1px solid #f8f7f8;
+  i{
+    color: #2e2d2e;
+  }
+}
