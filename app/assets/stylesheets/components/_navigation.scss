@@ -1,0 +1,13 @@
+.nav-bottom{
+  background-color: $bg-navigation;
+  padding: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-bottom ul li{
+  font-size: 20rem;
+}
+#user {
+  background-color: $bg-strong;
+}
