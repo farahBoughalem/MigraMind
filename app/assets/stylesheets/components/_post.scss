@@ -7,10 +7,13 @@
 
 #post img{
   border-radius: 50%;
+  border: 0.15rem solid white;
 }
 
 .user-border{
-  
+  background-image: $rainbow;
+  border-radius: 50%;
+  padding: 0.1rem;
 }
 
 .username{
