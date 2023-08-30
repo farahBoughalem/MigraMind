@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
   end
-  
+
   def create
     @event = Event.new(event_params)
     @events.user = current_user
@@ -45,7 +45,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :location, :description, :date)
+    params.require(:event).permit(:name, :address, :description, :date, :photo)
   end
 
   def set_attributes
