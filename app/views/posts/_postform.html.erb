@@ -3,10 +3,13 @@
         "Finances", "Social Benefits", "Community", "Legal Rights", "Healthcare",
         "Student Life", "Mental Health", "Parenthood", "Travel", "Public Transportation"] %>
   <div data-new-post-target="form" class="d-none">
+    <h5 class="header">New post</h5>
     <%= simple_form_for post do |f| %>
-      <%= f.input :category, as: :select, collection: category, prompt: 'Select a Category' %>
-      <%= f.input :content, as: :text %>
-      <%= f.submit class: "btn btn-success" %>
+      <%= f.input :category, as: :select, collection: category, prompt: 'which category?', label: false, input_html: {class: "simple-form"}%>
+      <%= f.input :content, as: :text, label: false, placeholder: "Write your post here", input_html: {class: "simple-form"} %>
+      <%= button_tag(class: "button") do %>
+        <a class="submit"><i class="fa-solid fa-paper-plane"></i></a>
+      <% end %>
     <% end %>
   </div>
 </div>

@@ -6,11 +6,5 @@ Rails.application.routes.draw do
   resources :events
   resources :tasks
   resources :tasks, only: :index
-<<<<<<< HEAD
-  resources :posts, only: %i[new create]
-=======
-  resources :posts, only: :index
-
-
->>>>>>> master
+  resources :posts, only: %i[new create index]
 end
