@@ -5,4 +5,6 @@ class Event < ApplicationRecord
   validates :address, presence: true
   validates :description, presence: true
   validates :date, presence: true
+
+  has_one_attached :photo
 end
