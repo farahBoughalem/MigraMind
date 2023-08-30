@@ -1,0 +1,12 @@
+<div class="container">
+  <% category = ["Housing", "Language", "Education", "Visa", "Work and Employment",
+        "Finances", "Social Benefits", "Community", "Legal Rights", "Healthcare",
+        "Student Life", "Mental Health", "Parenthood", "Travel", "Public Transportation"] %>
+  <div data-new-post-target="form" class="d-none">
+    <%= simple_form_for post do |f| %>
+      <%= f.input :category, as: :select, collection: category, prompt: 'Select a Category' %>
+      <%= f.input :content, as: :text %>
+      <%= f.submit class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>

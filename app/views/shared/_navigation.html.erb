@@ -1,21 +1,26 @@
 <footer>
-  <div class="nav-bottom">
-    <ul>
-      <li>
-        <a class="icons" href="#"><i class="fa-solid fa-house"></i></a>
-      </li>
-      <li>
-        <a class="icons" href="#"><i class="fa-solid fa-calendar-days"></i></a>
-      </li>
-      <li data-controller="newPost">
-        <a class="icons" id="plus"><i class="fa-solid fa-circle-plus"></i></a>
-      </li>
-      <li>
-        <a class="icons" href="#"><i class="fa-solid fa-circle-check"></i></a>
-      </li>
-      <li>
-        <a id="user" href="#"><i class="fa-solid fa-circle-user"></i></a>
-      </li>
-    </ul>
+  <div data-controller="new-post">
+    <div>
+      <%= render "postform", post: @post %>
+    </div>
+    <div class="nav-bottom">
+      <ul>
+        <li>
+          <a class="icons" href="#"><i class="fa-solid fa-house"></i></a>
+        </li>
+        <li>
+          <a class="icons" href="#"><i class="fa-solid fa-calendar-days"></i></a>
+        </li>
+        <li>
+          <div class="icons" id="plus" data-action="click->new-post#reveal"><i class="fa-solid fa-circle-plus"></i></div>
+        </li>
+        <li>
+          <a class="icons" href="#"><i class="fa-solid fa-circle-check"></i></a>
+        </li>
+        <li>
+          <a id="user" href="#"><i class="fa-solid fa-circle-user"></i></a>
+        </li>
+      </ul>
+    </div>
   </div>
 </footer>
