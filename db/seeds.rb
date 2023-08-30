@@ -138,66 +138,75 @@ Task.create([
 
 puts "Creating Event"
 
-Event.create([
-  { name: "Frankfurt Christmas Market",
-    address: "Römerberg, St Paul's Square, Main Quay, Hauptwache, Friedrich Stoltze Square",
-    description: "With its sheer size and vast number of visitors, the Frankfurt Christmas Market is one of the most significant Christmas markets in Germany. Elaborate and creative stand decorations,
-    the backdrops of the Römerberg and St Paul's Square and the huge Christmas tree combine to also make the Frankfurt Christmas Market one of the most beautiful in all the land.",
-    date: "27 November 2023",
-    user_id: user1.id },
-  { name: "IFA Berlin 2023",
-    address: "Messe Berlin, Berlin",
-    description: "As the top trade fair for consumer and home electronics, IFA Berlin draws industry leaders, media, buyers, and dealers from Europe and beyond.
-    Its international scope and product showcases make it a must-attend event.",
-    date: "8 September 2023",
-    user_id: user2.id },
-  { name: "Anuga - Food & Beverage Fair 2023",
-    address: "Koelnmesse GmbH, Cologne",
-    description: "Anuga is the biggest trade fair and key industry event for Food and Beverage.
-    It showcases the latest innovations and attracts exhibitors and visitors worldwide, providing a platform for business opportunities and networking.",
-    date: "07 - 11 October 2023",
-    user_id: user3.id },
-  { name: "Shoes Dusseldorf 2023",
-    address: "Areal Bohler, Düsseldorf",
-    description: "Shoes Dusseldorf provides a diverse brand portfolio with collection-specific segmentation. It is a meeting place for the industry to network, order and conduct business in a protected setting.
-    The event also features inspiring side events and international shoe trends.",
-    date: "27 - 29 December 2023",
-    user_id: user4.id },
-  { name: "IAA Mobility 2023",
-    address: "Exhibition Munich, Munich",
-    description: "The world's largest and most important mobility event offers manufacturers, suppliers, tech companies,
-    service providers and startups a wide range of opportunities to present themselves and their services to a broad international B2B and B2C audience.",
-    date: "05 - 10 Sep 2023",
-    user_id: user5.id },
-  { name: "Unique 4+1 2023",
-    address: "LMI - Leipziger Messe International GmbH, Leipzig",
-    description: "The Unique 4+1 trade fair showcases advertising technology, textile finishing, engraving, trophies, and photography.
-    Exhibits include large format printing, illuminated signs, and professional photography.",
-    date: "22 - 24 September 2023",
-    user_id: user6.id },
-  { name: "Rehacare International 2023",
-    address: "Messe Dusseldorf, Düsseldorf",
-    description: "Rehacare is a top international trade fair for rehabilitation, care, prevention, and inclusion.
-    It serves as a platform for communication and information exchange among people with disabilities, the elderly, and those in need of nursing care.
-    The fair offers a wide range of products, from mobility aids to barrier-free living concepts and sports equipment.",
-    date: "13 - 16 September 2023",
-    user_id: user7.id },
-  { name: "Enterprise AI and Machine Learning Summit 2023",
-    address: "Maritim proArte Hotel Berlin, Berlin",
-    description: "The Enterprise AI Summit explicitly addresses concrete use cases for the practical use of artificial intelligence and machine learning.
-    The use case event brings together more than 100 data scientists,
-    machine learning experts and AI specialists to exchange views on new technology trends in the areas of applied AI & machine learning, business analytics, ML and deep learning platforms, technical computing, scaling of algorithms, NLP, MLOps etc. and to present current projects, models and methods from practice.",
-    date: "17 - 19 September 2023",
-    user_id: user8.id },
-  { name: "Connecticum Job Fair 2023",
-    address: "Messe Berlin, Kleinmachnow",
-    description: "The Connecticum Job Fair allows job seekers to connect with recruiters, employers, and hiring managers, and potentially secure employment with reputable companies and organizations.",
-    date: "24 - 26 October 2023",
-    user_id: user9.id },
-  { name: "Kind + Jugend 2023",
-    address: "Koelnmesse GmbH, Cologne",
-    description: "Kind + Jugend is THE international industry event. Leading manufacturers and brands, as well as numerous small and medium-sized specialist suppliers, show a wide range of products for baby and toddler outfitting.
-    From prams and child seats to home textiles, baby clothing, children's furniture, electronic devices, care and safety products: Kind + Jugend presents diversity and high-quality design and thus sets important impulses and trends for the entire sector.",
-    date: "07 - 09 September 2023",
-    user_id: user10.id }
-])
+file1 = URI.open("https://mein.toubiz.de/api/v1/media/2458f350-2659-437c-ba90-a763f41ae4fd/preview?format=image/jpeg&width=900")
+event1 = Event.create(name: "Frankfurt Christmas Market", address: "Römerberg, St Paul's Square, Main Quay, Hauptwache,
+Friedrich Stoltze Square", description: "With its sheer size and vast number of visitors,
+the Frankfurt Christmas Market is one of the most significant Christmas markets in Germany. Elaborate and creative stand
+decorations, the backdrops of the Römerberg and St Paul's Square and the huge Christmas tree combine to also make the
+Frankfurt Christmas Market one of the most beautiful in all the land.", date: "27 November 2023", user_id: user1.id)
+event1.photo.attach(io: file1, filename: "event1", content_type: "image/jpeg")
+event1.save
+
+file2 = URI.open("https://www.sinnesfreunde.de/wp-content/uploads/Sinnesfreunde-projekte-messe-ifa-05.jpg")
+event2 = Event.create(name: "IFA Berlin 2023", address: "Messe Berlin, Berlin", description: "As the top trade fair for consumer and home electronics, IFA Berlin draws industry leaders, media, buyers, and dealers from Europe and beyond.
+Its international scope and product showcases make it a must-attend event.",
+date: "8 September 2023", user_id: user2.id)
+event2.photo.attach(io: file2, filename: "event2", content_type: "image/jpg")
+event2.save
+
+file3 = URI.open("https://somme.com/wp-content/uploads/2019/07/8b2354_344644473574484493fe6e2647582a5a-mv2.jpg")
+event3 = Event.create(name: "Anuga - Food & Beverage Fair 2023", address: "Koelnmesse GmbH, Cologne", description: "Anuga is the biggest trade fair and key industry event for Food and Beverage.
+It showcases the latest innovations and attracts exhibitors and visitors worldwide, providing a platform for business opportunities and networking.",
+date: "07 - 11 October 2023", user_id: user3.id)
+event3.photo.attach(io: file3, filename: "event3", content_type: "image/jpg")
+event3.save
+
+file4 = URI.open("https://www.textilwirtschaft.de/news/media/23/Shoes-Dsseldorf-225441.jpeg")
+event4 = Event.create(name: "Shoes Dusseldorf 2023", address: "Areal Bohler, Düsseldorf", description: "Shoes Dusseldorf provides a diverse brand portfolio with collection-specific segmentation. It is a meeting place for the industry to network, order and conduct business in a protected setting.
+The event also features inspiring side events and international shoe trends.",
+date: "27 - 29 December 2023", user_id: user4.id)
+event4.photo.attach(io: file4, filename: "event4", content_type: "image/jpeg")
+event4.save
+
+file5 = URI.open("https://autovista24.autovistagroup.com/wp-content/uploads/sites/5/2021/09/IAA-MOBILITY-2021-Impressionen-Messehalle-0656-1024x682.jpg")
+event5 = Event.create(name: "IAA Mobility 2023", address: "Exhibition Munich, Munich", description: "The world's largest and most important mobility event offers manufacturers, suppliers, tech companies,
+service providers and startups a wide range of opportunities to present themselves and their services to a broad international B2B and B2C audience.",
+date: "05 - 10 Sep 2023", user_id: user5.id)
+event5.photo.attach(io: file5, filename: "event5", content_type: "image/jpg")
+event5.save
+
+file6 = URI.open("https://www.signa-werbung.de/fileadmin/_processed_/0/2/csm_messe_unique4_1_bild_1_7af9ab1bd2.jpg")
+event6 = Event.create(name: "Unique 4+1 2023", address: "LMI - Leipziger Messe International GmbH, Leipzig", description: "The Unique 4+1 trade fair showcases advertising technology, textile finishing, engraving, trophies, and photography.
+Exhibits include large format printing, illuminated signs, and professional photography.",
+date: "22 - 24 September 2023", user_id: user6.id)
+event6.photo.attach(io: file6, filename: "event6", content_type: "image/jpg")
+event6.save
+
+file7 = URI.open("https://www.meyra.com/typo3temp/_processed_/csm_IMG_5260_03509e6586.jpg")
+event7 = Event.create(name: "Rehacare International 2023", address: "Messe Dusseldorf, Düsseldorf", description: "Rehacare is a top international trade fair for rehabilitation, care, prevention, and inclusion.
+It serves as a platform for communication and information exchange among people with disabilities, the elderly, and those in need of nursing care.
+The fair offers a wide range of products, from mobility aids to barrier-free living concepts and sports equipment.",
+date: "13 - 16 September 2023", user_id: user7.id)
+event7.photo.attach(io: file7, filename: "event7", content_type: "image/jpg")
+event7.save
+
+file8 = URI.open("https://www.big-data.ai/sites/default/files/2023-01/3_BAS.jpg")
+event8 = Event.create(name: "Enterprise AI and Machine Learning Summit 2023", address: "Maritim proArte Hotel Berlin, Berlin", description: "The Enterprise AI Summit explicitly addresses concrete use cases for the practical use of artificial intelligence and machine learning.
+The use case event brings together more than 100 data scientists,
+machine learning experts and AI specialists to exchange views on new technology trends in the areas of applied AI & machine learning, business analytics, ML and deep learning platforms, technical computing, scaling of algorithms, NLP, MLOps etc. and to present current projects, models and methods from practice.",
+date: "17 - 19 September 2023", user_id: user8.id)
+event8.photo.attach(io: file8, filename: "event8", content_type: "image/jpg")
+event8.save
+
+file9 = URI.open("https://www.connecticum.de/fotos/messefotos-62897.jpg")
+event9 = Event.create(name: "Connecticum Job Fair 2023", address: "Messe Berlin, Kleinmachnow", description: "The Connecticum Job Fair allows job seekers to connect with recruiters, employers, and hiring managers, and potentially secure employment with reputable companies and organizations.",
+date: "24 - 26 October 2023", user_id: user9.id)
+event9.photo.attach(io: file9, filename: "event9", content_type: "image/jpg")
+event9.save
+
+file10 = URI.open("https://media.koelnmesse.io/kindundjugend/redaktionell/kind-jugend/img/exhibitor/jiu/jiu_1200x675_t01_1025.jpg")
+event10 = Event.create(name: "Kind + Jugend 2023", address: "Koelnmesse GmbH, Cologne", description: "Kind + Jugend is THE international industry event. Leading manufacturers and brands, as well as numerous small and medium-sized specialist suppliers, show a wide range of products for baby and toddler outfitting.
+From prams and child seats to home textiles, baby clothing, children's furniture, electronic devices, care and safety products: Kind + Jugend presents diversity and high-quality design and thus sets important impulses and trends for the entire sector.",
+date: "07 - 09 September 2023", user_id: user10.id)
+event10.photo.attach(io: file10, filename: "event10", content_type: "image/jpg")
+event10.save
