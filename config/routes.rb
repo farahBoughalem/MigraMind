@@ -3,10 +3,8 @@ Rails.application.routes.draw do
 
   root to: "posts#index"
 
-  resources :events
+  resources :events, only: %i[index new]
   resources :tasks
   resources :tasks, only: :index
   resources :posts, only: :index
-
-
 end
