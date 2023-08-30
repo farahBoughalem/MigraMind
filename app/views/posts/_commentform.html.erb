@@ -1,0 +1,9 @@
+<%= simple_form_for [post, comment] , html: { data: {show_comments_target: "form", action: "submit->show-comments#add"} } do |f| %>
+  <div class="comment-form">
+    <%= f.input :content, label: false, input_html: { class: "comment-input",placeholder: "Write your comment..."} %>
+<%= button_tag( :class => "comment-button") do %>
+     <i class="fa-solid fa-paper-plane"></i>
+<% end %>
+
+  </div>
+<% end %>
