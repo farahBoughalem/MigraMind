@@ -1,5 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "user_task";
+@import "task";
 
 body{
   background-color: $body-background;

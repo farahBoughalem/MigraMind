@@ -1,19 +1,20 @@
-#header_container {
+#user_header_container {
   // margin-bottom: 50px;
   // margin-top: 50px;
   // margin-left: 10px;
 
+
 }
-.task_container {
+.user_task_container {
   border: 3px solid black;
 
 }
 
-#task_title {
+#user_task_title {
   font-weight: bold;
 }
 
-#header_container h1 {
+#user_header_container h1 {
   font-weight: bold;
 }
 
@@ -22,6 +23,6 @@
   margin-right: 0.5rem;
 }
 
-#task_content {
+#user_task_content {
   // margin-right: 1em;
 }
