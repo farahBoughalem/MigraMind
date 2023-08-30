@@ -5,14 +5,14 @@ Post.destroy_all
 Event.destroy_all
 Task.destroy_all
 User.destroy_all
-
+Comment.destroy_all
 
 
 puts "Creating 10 users😊"
 require "open-uri"
 
-file1= URI.open("https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
-user1= User.new(first_name: "Elizebeth", last_name: "Johnson", username: "emma_j", email: "emma.johnson@gmsil.com", password: "123456")
+file1 = URI.open("https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+user1 = User.new(first_name: "Elizebeth", last_name: "Johnson", username: "emma_j", email: "emma.johnson@gmsil.com", password: "123456")
 user1.photo.attach(io: file1, filename: "user1", content_type: "image/jpeg")
 user1.save
 
@@ -65,45 +65,45 @@ puts "Done too little too late 😈"
 
 puts "Creating posts ✏"
 
-Post.create(content: "Hey everyone! I recently moved to Germany and I'm a bit confused about how the healthcare system works here. Any tips or experiences you can share about accessing medical services as a migrant?", category: "Healthcare", user_id: user1.id )
+post1 = Post.create(content: "Hey everyone! I recently moved to Germany and I'm a bit confused about how the healthcare system works here. Any tips or experiences you can share about accessing medical services as a migrant?", category: "Healthcare", user_id: user1.id )
 
-Post.create(content: "Guten Tag! Let's share our favorite language learning apps, websites, and classes that have helped us improve our language skills.", category: "Language", user_id: user2.id )
+post2 = Post.create(content: "Guten Tag! Let's share our favorite language learning apps, websites, and classes that have helped us improve our language skills.", category: "Language", user_id: user2.id )
 
-Post.create(content: "Hallo zusammen! If you're a migrant living in Berlin, which neighborhoods do you find most welcoming and accommodating? Let's discuss the best places to settle in the city.", category: "Housing", user_id: user3.id)
+post3 = Post.create(content: "Hallo zusammen! If you're a migrant living in Berlin, which neighborhoods do you find most welcoming and accommodating? Let's discuss the best places to settle in the city.", category: "Housing", user_id: user3.id)
 
-Post.create(content: "Hello everyone! Finding a job in a new country can be tough. Let's share job search strategies, interview experiences, and advice on how to build a successful career in Germany.", category: "Work and Employment", user_id: user4.id)
+post4 = Post.create(content: "Hello everyone! Finding a job in a new country can be tough. Let's share job search strategies, interview experiences, and advice on how to build a successful career in Germany.", category: "Work and Employment", user_id: user4.id)
 
-Post.create(content: "Servus! Frankfurt is a diverse city with plenty of cultural events. Anyone interested in attending or organizing meetups to exchange our unique cultural experiences?", category: "Community", user_id: user5.id)
+post5 = Post.create(content: "Servus! Frankfurt is a diverse city with plenty of cultural events. Anyone interested in attending or organizing meetups to exchange our unique cultural experiences?", category: "Community", user_id: user5.id)
 
-Post.create(content: "Homesickness can be challenging, but we can support each other. Share your stories and tips on how you’ve coped with missing home while adjusting to life in Germany.", category: "Mental Health", user_id: user6.id)
+post6 = Post.create(content: "Homesickness can be challenging, but we can support each other. Share your stories and tips on how you’ve coped with missing home while adjusting to life in Germany.", category: "Mental Health", user_id: user6.id)
 
-Post.create(content: "Hey there! Let's discuss the process of obtaining residence permits, work visas, and other legal documents necessary for migrants to stay and work in Germany.", category: "Visas and Residence Permits", user_id: user7.id)
+post7 = Post.create(content: "Hey there! Let's discuss the process of obtaining residence permits, work visas, and other legal documents necessary for migrants to stay and work in Germany.", category: "Visas and Residence Permits", user_id: user7.id)
 
-Post.create(content: "Guten Appetit! Food connects us to our roots. Let's talk about our favorite recipes from back home and how we've adapted to cooking with local ingredients here in Germany.", category: "Community", user_id: user8.id)
+post8 = Post.create(content: "Guten Appetit! Food connects us to our roots. Let's talk about our favorite recipes from back home and how we've adapted to cooking with local ingredients here in Germany.", category: "Community", user_id: user8.id)
 
-Post.create(content: "Being a student in a new country can be overwhelming. Let's share tips on finding academic support, making friends, and enjoying student life in Munich.", category: "Student Life", user_id: user9.id)
+post9 = Post.create(content: "Being a student in a new country can be overwhelming. Let's share tips on finding academic support, making friends, and enjoying student life in Munich.", category: "Student Life", user_id: user9.id)
 
-Post.create(content: "Hey, newcomers! Affordable housing can be a challenge. Share your tips, websites, and resources for finding budget-friendly housing options in Germany.", category: "Housing", user_id: user10.id)
+post10 = Post.create(content: "Hey, newcomers! Affordable housing can be a challenge. Share your tips, websites, and resources for finding budget-friendly housing options in Germany.", category: "Housing", user_id: user10.id)
 
-Post.create(content: "Different work cultures can sometimes lead to misunderstandings. Let's discuss how we've navigated cultural differences in the workplace and built positive relationships with colleagues.", category: "Work and Employment", user_id: user1.id)
+post11 = Post.create(content: "Different work cultures can sometimes lead to misunderstandings. Let's discuss how we've navigated cultural differences in the workplace and built positive relationships with colleagues.", category: "Work and Employment", user_id: user1.id)
 
-Post.create(content: "Moin moin! Are you a migrant who started a business in Hamburg? Share your entrepreneurial journey, challenges you've faced, and advice for others looking to do the same.", category: "Work and Employment", user_id: user2.id)
+post12 = Post.create(content: "Moin moin! Are you a migrant who started a business in Hamburg? Share your entrepreneurial journey, challenges you've faced, and advice for others looking to do the same.", category: "Work and Employment", user_id: user2.id)
 
-Post.create(content: "Hallo parents! Let's talk about the education options available for our children in Germany. From schools to extracurricular activities, share your insights and experiences.", category: "Parenthood", user_id: user3.id)
+post13 = Post.create(content: "Hallo parents! Let's talk about the education options available for our children in Germany. From schools to extracurricular activities, share your insights and experiences.", category: "Parenthood", user_id: user3.id)
 
-Post.create(content: "It's important to be aware of our rights as migrants. Let's discuss organizations in Cologne that provide legal assistance, support, and advocacy for migrants.", category: "Legal Rights", user_id: user4.id)
+post14 = Post.create(content: "It's important to be aware of our rights as migrants. Let's discuss organizations in Cologne that provide legal assistance, support, and advocacy for migrants.", category: "Legal Rights", user_id: user4.id)
 
-Post.create(content: "Volunteering is a great way to connect with the local community. Share your experiences, opportunities, and organizations that welcome migrant volunteers in Stuttgart.", category: "Community", user_id: user5.id)
+post15 = Post.create(content: "Volunteering is a great way to connect with the local community. Share your experiences, opportunities, and organizations that welcome migrant volunteers in Stuttgart.", category: "Community", user_id: user5.id)
 
-Post.create(content: "Hallo! Making friends in a new place can be daunting. Let's share strategies for meeting people, joining social groups, and building a support network in Essen as migrants.", category: "Community", user_id: user6.id)
+post16 = Post.create(content: "Hallo! Making friends in a new place can be daunting. Let's share strategies for meeting people, joining social groups, and building a support network in Essen as migrants.", category: "Community", user_id: user6.id)
 
-Post.create(content: "Hey there! Public transport is a lifeline in Germany. Share your experiences and tips for using buses, trams, trains, and subways effectively as a newcomer.", category: "Travel and Public Transport", user_id: user7.id)
+post17 = Post.create(content: "Hey there! Public transport is a lifeline in Germany. Share your experiences and tips for using buses, trams, trains, and subways effectively as a newcomer.", category: "Travel and Public Transport", user_id: user7.id)
 
-Post.create(content: "Hallo liebe Freunde! Let's discuss the experiences of LGBTQ+ migrants in Germany. Share stories, resources, and support networks that have helped you navigate this aspect of your identity.", category: "Community", user_id: user8.id)
+post18 = Post.create(content: "Hallo liebe Freunde! Let's discuss the experiences of LGBTQ+ migrants in Germany. Share stories, resources, and support networks that have helped you navigate this aspect of your identity.", category: "Community", user_id: user8.id)
 
-Post.create(content: "Hallo liebe Mitbürger! Aging migrants might face unique challenges. Let's discuss resources, support networks, and healthcare options available for our elder members in Germany.", category: "Healthcare", user_id: user9.id)
+post19 = Post.create(content: "Hallo liebe Mitbürger! Aging migrants might face unique challenges. Let's discuss resources, support networks, and healthcare options available for our elder members in Germany.", category: "Healthcare", user_id: user9.id)
 
-Post.create(content: "Moin moin, fitness enthusiasts! How do you stay active in Düsseldorf? Let's talk about sports clubs, fitness centers, and outdoor activities that keep us healthy and connected.", category: "Community", user_id: user10.id)
+post20 = Post.create(content: "Moin moin, fitness enthusiasts! How do you stay active in Düsseldorf? Let's talk about sports clubs, fitness centers, and outdoor activities that keep us healthy and connected.", category: "Community", user_id: user10.id)
 
 
 puts "Creating Checklist"
@@ -210,3 +210,16 @@ From prams and child seats to home textiles, baby clothing, children's furniture
 date: "07 - 09 September 2023", user_id: user10.id)
 event10.photo.attach(io: file10, filename: "event10", content_type: "image/jpg")
 event10.save
+
+puts "Creating comments 📖"
+Comment.create(post_id: post1.id, user_id: user5.id, content: "Welcome to Germany! Register with a local doctor (Hausarzt) and your insurance should cover most.")
+Comment.create(post_id: post2.id, user_id: user7.id, content: "Hi there! Duolingo and Babbel have been game-changers for me.😉")
+Comment.create(post_id: post2.id, user_id: user3.id, content: "I've had success with Memrise and taking local VHS courses. Viel Erfolg!")
+Comment.create(post_id: post3.id, user_id: user9.id, content: "Hi there! Prenzlauer Berg has a great vibe for migrants like me.🌆")
+Comment.create(post_id: post4.id, user_id: user1.id, content: "Networking helped me a lot! Attending meetups and LinkedIn connections. 🌐")
+Comment.create(post_id: post4.id, user_id: user3.id, content: "Language skills matter. After improving my German, job prospects expanded")
+Comment.create(post_id: post5.id, user_id: user2.id, content: "Absolutely! Let's embrace the diversity and connect through culture. 🌍")
+Comment.create(post_id: post7.id, user_id: user5.id, content: "Sure thing! Navigating the paperwork is a challenge, but worth it. 📋")
+Comment.create(post_id: post8.id, user_id: user10.id, content: "Love this idea! Mixing traditions with local flavors has been fun. 🍴")
+Comment.create(post_id: post9.id, user_id: user2.id, content: "Totally get it! Joining clubs helped me find friends and balance. 🎓")
+Comment.create(post_id: post13.id, user_id: user4.id, content: "Hi there! Public schools offer solid education, and activities keep them engaged. 🏫🎒")

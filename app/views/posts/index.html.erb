@@ -12,30 +12,17 @@
 </div>
 
 <% @posts.each do |post| %>
-  <div class="card col-11 col-md-6" id="post">
+  <div class="card col-11 col-md-6" id="post" data-controller="show-comments">
     <div class="card-body">
-      <div class="d-flex" style="gap: 4%">
-        <div class="user-border">
-         <%= cl_image_tag post.user.photo.key, width: 50, height: 50, crop: :thumb, gravity: :face %>
-        </div>
-        <div class="d-flex flex-column">
-          <p class="username"><%= post.user.username %></p>
-          <% time_in_hours = (Time.now - post.created_at)/3600 %>
-          <% if time_in_hours < 1 %>
-            <% time = "#{((Time.now - post.created_at)/60).round} min ago" %>
-          <% else %>
-            <% time = "#{time_in_hours.round} hours ago" %>
-          <% end %>
-          <p class="time"><%= time %></p>
-        </div>
-      </div>
-      <p class="border-bottom"><i class="fa-solid fa-tag"></i> <%= post.category %></p>
-      <div class="card-text">
-        <%= post.content %>
-      </div>
-      <div class="interaction-icons">
-        <button class="btn btn-light"><i class="fa-solid fa-heart"></i></button>
-        <button class="btn btn-light"><i class="fa-solid fa-comments"></i></button>
+      <%= render 'post', post: post %>
+
+      <div class="comments d-none" data-show-comments-target="comments">
+
+        <%= render 'commentform', post: post, comment: @comment %>
+
+        <% post.comments.each do |comment| %>
+          <%= render 'comment', comment: comment %>
+        <% end %>
       </div>
     </div>
   </div>
