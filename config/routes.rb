@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "posts#index"
 
   resources :events
+  resources :tasks
   resources :tasks, only: :index
   resources :posts, only: :index
 
