@@ -5,6 +5,5 @@ Rails.application.routes.draw do
 
   resources :events
   resources :tasks, only: :index
-
-
+  resources :posts, only: %i[new create index]
 end
