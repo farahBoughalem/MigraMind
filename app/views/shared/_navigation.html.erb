@@ -3,7 +3,7 @@
     <div data-controller="new-post">
       <% if  !@post.nil? %>
         <%= render "postform", post: @post %>
-      <% elsif !@event.nil? %>
+      <% elsif !@event.nil? && !@events.nil? %>
         <%= render "form", event: @event %>
       <% end %>
       <div class="nav-bottom">
@@ -30,9 +30,9 @@
             <% end %>
           </li>
           <li class="icons">
-            <%# link_to user_path do %>
+            <%= link_to user_dashboard_path do %>
               <i class="fa-solid fa-circle-user" style="color: #ffffff"></i>
-            <%# end %>
+            <% end %>
           </li>
         </ul>
       </div>

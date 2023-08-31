@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # resouces :users, only: :show
+  get 'dashboard/index'
   get 'user_tasks/controller'
   get 'dashboard', to: 'dashboard#index', as: 'user_dashboard'
   devise_for :users, controllers: { registrations: 'registrations' }

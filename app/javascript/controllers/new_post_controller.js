@@ -2,10 +2,9 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="new-post"
 export default class extends Controller {
-  static targets = ["addPost", "newEvent"]
+  static targets = ["addPost", "addEvent"]
 
   connect() {
-    console.log(this.newEventTarget)
   }
 
   reveal(event) {
@@ -13,7 +12,7 @@ export default class extends Controller {
     if (type === "post") {
       this.addPostTarget.classList.toggle("d-none");
     } else {
-      this.newEventTarget.classList.toggle("d-none");
+      this.addEventTarget.classList.toggle("d-none");
     }
 
   };
