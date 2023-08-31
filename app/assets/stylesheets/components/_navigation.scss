@@ -10,13 +10,15 @@
 
 footer {
   background: $rainbow;
-  border: 0.2rem solid $white;
+  border: 0.1rem solid $white;
   border-radius: 1.8rem;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
   position: relative;
   position: fixed;
   bottom: 0.5rem;
-  width: 100svw;
+  overflow: hidden;
+  width: 98svw;
+  margin-left: 0.8rem;
 }
 
 .nav-bottom ul {
@@ -73,6 +75,5 @@ a#user {
 }
 
 .opacity {
-  opacity: 0.8 ;
-  background-image: black;
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,1);
 }
