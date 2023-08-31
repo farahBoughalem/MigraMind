@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   get 'user_tasks/controller'
+  get 'dashboard', to: 'dashboard#index', as: 'user_dashboard'
   devise_for :users, controllers: { registrations: 'registrations' }
 
   root to: "posts#index"
   resources :posts, only: %i[index new create] do
     resources :comments, only: %i[new create]
   end
-  resources :events, only: %i[index new create]
+  resources :events, only: %i[index show new create]
 
   resources :tasks do
     resources :user_tasks, only: [:index, :update]

@@ -2,7 +2,7 @@
   <% category = ["Housing", "Language", "Education", "Visa", "Work and Employment",
         "Finances", "Social Benefits", "Community", "Legal Rights", "Healthcare",
         "Student Life", "Mental Health", "Parenthood", "Travel", "Public Transportation"] %>
-  <div data-new-post-target="form" class="d-none">
+  <div data-new-post-target="addPost" class="d-none">
     <h5 class="header">New post</h5>
     <%= simple_form_for post do |f| %>
       <%= f.input :category, as: :select, collection: category, prompt: 'Category', label: false, input_html: {class: "simple-form"}%>

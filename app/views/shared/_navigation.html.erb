@@ -1,25 +1,38 @@
 <% if user_signed_in? %>
   <footer>
     <div data-controller="new-post">
-      <div>
+      <% if  !@post.nil? %>
         <%= render "postform", post: @post %>
-      </div>
+      <% elsif !@event.nil? %>
+        <%= render "form", event: @event %>
+      <% end %>
       <div class="nav-bottom">
         <ul>
-          <li>
-            <a class="icons" href="#"><i class="fa-solid fa-house"></i></a>
+          <li class="icons">
+          <%= link_to root_path do %>
+            <i class="fa-solid fa-house" style="color: #ffffff"></i>
+          <% end %>
+          </li>
+          <li class="icons">
+            <%= link_to events_path do %>
+              <i class="fa-solid fa-calendar-days" style="color: #ffffff"></i>
+            <% end %>
           </li>
           <li>
-            <a class="icons" href="#"><i class="fa-solid fa-calendar-days"></i></a>
+            <% type = @post.nil? ? "event" : "post" %>
+            <div class="icons" id="plus" data-action="click->new-post#reveal"
+              data-new-post-type = "<%= type %>"
+            ><i class="fa-solid fa-circle-plus"></i></div>
           </li>
-          <li>
-            <div class="icons" id="plus" data-action="click->new-post#reveal"><i class="fa-solid fa-circle-plus"></i></div>
+          <li class="icons">
+            <%= link_to tasks_path do %>
+             <i class="fa-solid fa-circle-check" style="color: #ffffff"></i>
+            <% end %>
           </li>
-          <li>
-            <a class="icons" href="#"><i class="fa-solid fa-circle-check"></i></a>
-          </li>
-          <li>
-            <a id="user" href="#"><i class="fa-solid fa-circle-user"></i></a>
+          <li class="icons">
+            <%# link_to user_path do %>
+              <i class="fa-solid fa-circle-user" style="color: #ffffff"></i>
+            <%# end %>
           </li>
         </ul>
       </div>
