@@ -1,15 +1,16 @@
-<div class="row justify-content-center">
-  <div class="col-8 my-3">
-    <%= form_with url: root_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Type a keyword"
-        %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-    <% end %>
+<div data-controller="blur" data-blur-target="posts" class="" data-action="click->blur#blur">
+  <div class="row justify-content-center">
+    <div class="col-8 my-3">
+      <%= form_with url: root_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Type a keyword"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
-</div>
 
 <% @posts.each do |post| %>
   <div class="card col-11 col-md-6" id="post" data-controller="show-comments">
@@ -21,9 +22,10 @@
         <%= render 'commentform', post: post, comment: @comment %>
 
         <% post.comments.each do |comment| %>
-          <%= render 'comment', comment: comment %>
+          <%= render 'comment', comment: comment, post: post %>
         <% end %>
       </div>
     </div>
   </div>
 <% end %>
+</div>

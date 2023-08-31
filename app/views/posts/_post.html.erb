@@ -19,12 +19,19 @@
     <%= post.content %>
   </div>
   <div class="interaction-icons">
-    <button class="btn btn-light"><i class="fa-solid fa-heart"></i></button>
+    <a href="#" id="post-like-link" data-controller="like-button" data-like-button-post-id="<%= post.id %>" data-like-button-likable-type="post" data-action="click->like-button#like">
+     <button class="btn btn-light">
+      <div data-like-button-target="container" class="blacky">
+        <span data-like-button-target="sum"><%= post.likes.count %></span>
+        <i class="fa-solid fa-heart"></i>
+      </div>
+     </button>
+    </a>
     <button class="btn btn-light" data-action="click->show-comments#show">
-      <% if post.comments.count > 0 %>
-        <%= post.comments.count %>
-      <% end %>
-      <i class="fa-solid fa-comments"></i>
+      <div class="blacky">
+        <span data-show-comments-target="sum"><%= post.comments.count %></span>
+        <i class="fa-solid fa-comments"></i>
+      </div>
     </button>
   </div>
 </div>
