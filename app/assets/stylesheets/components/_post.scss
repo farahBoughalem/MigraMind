@@ -39,10 +39,7 @@
 .interaction-icons button{
   background-color: #fcfbfd;
   border-radius: 50%;
-  border: 1px solid #f8f7f8;
-  i{
-    color: #2e2d2e;
-  }
+  // border: 1px solid #f8f7f8;
 }
 
 .comment{
@@ -72,4 +69,30 @@
   display: flex;
   justify-content: space-between;
   gap: 2%;
+}
+
+#comment-like-link, #post-like-link{
+  text-decoration: none;
+}
+
+#comment-sum{
+  font-size: 0.8rem;
+}
+
+.comment-likes-container{
+  display: flex;
+  flex-direction: column;
+  background-color: #fcfbfd;
+}
+
+.blacky{
+  color: black;
+}
+
+.greeny{
+  color: $success;
+}
+
+#comment-like-button{
+  border-radius: 1rem;
 }

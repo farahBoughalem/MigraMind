@@ -6,7 +6,6 @@
   <div class="container" id="user_tasks_container">
   <% current_user.user_tasks.each do |user_task|  %>
   <% actual_task = Task.find(user_task.task_id) %>
-
     <div class="user_task_container my-3 p-2">
         <div class="container" id="user_task_title">
           <p>

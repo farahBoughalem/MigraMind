@@ -3,6 +3,7 @@ puts "Deleting previous records"
 
 Post.destroy_all
 Event.destroy_all
+UserTask.destroy_all
 Task.destroy_all
 User.destroy_all
 Comment.destroy_all
@@ -60,6 +61,8 @@ file10 = URI.open("https://media.istockphoto.com/id/1372281808/photo/woman-face-
 user10 = User.new(first_name: "Mia", last_name: "Taylor", username: "mia_t", email: "mia.taylor@gmail.com", password: "123456")
 user10.photo.attach(io: file10, filename: "user10", content_type: "image/jpg")
 user10.save
+
+users = [user1, user2, user3, user4, user5, user6, user7, user8, user9, user10  ]
 
 puts "Done too little too late 😈"
 
@@ -136,11 +139,19 @@ Task.create([
   { title: "Get a SIM Card", content: "Obtain a local SIM card for your phone to have access to communication and data services." }
 ])
 
+puts "Creating User Tasks"
+
+users.each do |user|
+  Task.all.each do |task|
+    UserTask.create(user: user, task: task, status: false)
+  end
+end
+
 puts "Creating Event"
 
 file1 = URI.open("https://mein.toubiz.de/api/v1/media/2458f350-2659-437c-ba90-a763f41ae4fd/preview?format=image/jpeg&width=900")
-event1 = Event.create(name: "Frankfurt Christmas Market", address: "Römerberg, St Paul's Square, Main Quay, Hauptwache,
-Friedrich Stoltze Square", description: "With its sheer size and vast number of visitors,
+event1 = Event.create(name: "Frankfurt Christmas Market", address: "Kaiserstraße 56
+  60329 Frankfurt am Main", description: "With its sheer size and vast number of visitors,
 the Frankfurt Christmas Market is one of the most significant Christmas markets in Germany. Elaborate and creative stand
 decorations, the backdrops of the Römerberg and St Paul's Square and the huge Christmas tree combine to also make the
 Frankfurt Christmas Market one of the most beautiful in all the land.", date: "27 November 2023", user_id: user1.id)
@@ -155,28 +166,28 @@ event2.photo.attach(io: file2, filename: "event2", content_type: "image/jpg")
 event2.save
 
 file3 = URI.open("https://somme.com/wp-content/uploads/2019/07/8b2354_344644473574484493fe6e2647582a5a-mv2.jpg")
-event3 = Event.create(name: "Anuga - Food & Beverage Fair 2023", address: "Koelnmesse GmbH, Cologne", description: "Anuga is the biggest trade fair and key industry event for Food and Beverage.
+event3 = Event.create(name: "Anuga - Food & Beverage Fair 2023", address: " Messepl. 1, 50679 Köln", description: "Anuga is the biggest trade fair and key industry event for Food and Beverage.
 It showcases the latest innovations and attracts exhibitors and visitors worldwide, providing a platform for business opportunities and networking.",
 date: "07 - 11 October 2023", user_id: user3.id)
 event3.photo.attach(io: file3, filename: "event3", content_type: "image/jpg")
 event3.save
 
 file4 = URI.open("https://www.textilwirtschaft.de/news/media/23/Shoes-Dsseldorf-225441.jpeg")
-event4 = Event.create(name: "Shoes Dusseldorf 2023", address: "Areal Bohler, Düsseldorf", description: "Shoes Dusseldorf provides a diverse brand portfolio with collection-specific segmentation. It is a meeting place for the industry to network, order and conduct business in a protected setting.
+event4 = Event.create(name: "Shoes Dusseldorf 2023", address: "Böhlerstraße 1, 40667 Meerbusch Düsseldorf", description: "Shoes Dusseldorf provides a diverse brand portfolio with collection-specific segmentation. It is a meeting place for the industry to network, order and conduct business in a protected setting.
 The event also features inspiring side events and international shoe trends.",
 date: "27 - 29 December 2023", user_id: user4.id)
 event4.photo.attach(io: file4, filename: "event4", content_type: "image/jpeg")
 event4.save
 
 file5 = URI.open("https://autovista24.autovistagroup.com/wp-content/uploads/sites/5/2021/09/IAA-MOBILITY-2021-Impressionen-Messehalle-0656-1024x682.jpg")
-event5 = Event.create(name: "IAA Mobility 2023", address: "Exhibition Munich, Munich", description: "The world's largest and most important mobility event offers manufacturers, suppliers, tech companies,
+event5 = Event.create(name: "IAA Mobility 2023", address: "am messeturm 4, 81829 munich", description: "The world's largest and most important mobility event offers manufacturers, suppliers, tech companies,
 service providers and startups a wide range of opportunities to present themselves and their services to a broad international B2B and B2C audience.",
 date: "05 - 10 Sep 2023", user_id: user5.id)
 event5.photo.attach(io: file5, filename: "event5", content_type: "image/jpg")
 event5.save
 
 file6 = URI.open("https://www.signa-werbung.de/fileadmin/_processed_/0/2/csm_messe_unique4_1_bild_1_7af9ab1bd2.jpg")
-event6 = Event.create(name: "Unique 4+1 2023", address: "LMI - Leipziger Messe International GmbH, Leipzig", description: "The Unique 4+1 trade fair showcases advertising technology, textile finishing, engraving, trophies, and photography.
+event6 = Event.create(name: "Unique 4+1 2023", address: "Messe-Allee 1, 04356 Leipzig", description: "The Unique 4+1 trade fair showcases advertising technology, textile finishing, engraving, trophies, and photography.
 Exhibits include large format printing, illuminated signs, and professional photography.",
 date: "22 - 24 September 2023", user_id: user6.id)
 event6.photo.attach(io: file6, filename: "event6", content_type: "image/jpg")
@@ -199,13 +210,13 @@ event8.photo.attach(io: file8, filename: "event8", content_type: "image/jpg")
 event8.save
 
 file9 = URI.open("https://www.connecticum.de/fotos/messefotos-62897.jpg")
-event9 = Event.create(name: "Connecticum Job Fair 2023", address: "Messe Berlin, Kleinmachnow", description: "The Connecticum Job Fair allows job seekers to connect with recruiters, employers, and hiring managers, and potentially secure employment with reputable companies and organizations.",
+event9 = Event.create(name: "Connecticum Job Fair 2023", address: "Zehlendorfer Damm 190, 14532 Kleinmachnow", description: "The Connecticum Job Fair allows job seekers to connect with recruiters, employers, and hiring managers, and potentially secure employment with reputable companies and organizations.",
 date: "24 - 26 October 2023", user_id: user9.id)
 event9.photo.attach(io: file9, filename: "event9", content_type: "image/jpg")
 event9.save
 
 file10 = URI.open("https://media.koelnmesse.io/kindundjugend/redaktionell/kind-jugend/img/exhibitor/jiu/jiu_1200x675_t01_1025.jpg")
-event10 = Event.create(name: "Kind + Jugend 2023", address: "Koelnmesse GmbH, Cologne", description: "Kind + Jugend is THE international industry event. Leading manufacturers and brands, as well as numerous small and medium-sized specialist suppliers, show a wide range of products for baby and toddler outfitting.
+event10 = Event.create(name: "Kind + Jugend 2023", address: "Messepl. 1, 50679 Köln Cologne", description: "Kind + Jugend is THE international industry event. Leading manufacturers and brands, as well as numerous small and medium-sized specialist suppliers, show a wide range of products for baby and toddler outfitting.
 From prams and child seats to home textiles, baby clothing, children's furniture, electronic devices, care and safety products: Kind + Jugend presents diversity and high-quality design and thus sets important impulses and trends for the entire sector.",
 date: "07 - 09 September 2023", user_id: user10.id)
 event10.photo.attach(io: file10, filename: "event10", content_type: "image/jpg")

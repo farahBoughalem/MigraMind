@@ -3,6 +3,7 @@ class PostsController < ApplicationController
     @posts = Post.all
     @post = Post.new
     @comment = Comment.new
+    @like = Like.new
 
     if params[:query].present?
       sql_query = <<~SQL
@@ -10,7 +11,7 @@ class PostsController < ApplicationController
         OR posts.content @@ :query
         OR comments.content @@ :query
       SQL
-      @posts = @posts.joins(:comments).where(sql_query, query: "%#{params[:query]}%")
+      @posts = @posts.left_outer_joins(:comments).where(sql_query, query: "%#{params[:query]}%").distinct
     end
   end
 

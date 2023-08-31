@@ -1,4 +1,4 @@
-<%# Create dropdown menu with content inside, create checkboxes next to title %>
+<%# Create dropdown menu with content inside, create checkboxes next to title
 
 <div class="container" id="header_container">
 <h1 class="p-2">Arrival in Germany Checklist</h1>
@@ -7,18 +7,40 @@
 <div class="container" id="tasks_container">
 
   <% @tasks.each do |task| %>
-  <div class="task_container my-3 p-2">
-    <div class="container" id="task_title">
-      <p>
-      <%= task.title %>
+  <%# <div class="task_container my-3 p-2"> %>
+    <%# <div class="container" id="task_title"> %>
+      <%# <p> %>
+      <%# <%= task.title %>
       <%#= form_for task, remote: true do |f| %>
         <%#= f.check_box :status, {checked: task.status == true, onchange: 'this.form.submit()'}, true, false %>
       <%# end %>
-      </p>
+      <%# </p> %>
+    <%# </div> %>
+    <%# <% <div class="container" id="task_content"> %>
+      <%# <p><%= task.content</p> %>
+    <%# <% </div>  %>
+  <%# </div> %>
+  <%# <% end %>
+<%# </div> %>
+
+<div class="container" id="header_container">
+  <h1 class="p-2">Arrival in Germany Checklist</h1>
+</div>
+
+<div data-controller="accordion" id="tasks_container">
+  <% @tasks.each do |task| %>
+    <div class="task_container my-3 p-2">
+
+
+        <button data-accordion-target="accordion" class="accordion"><%= task.title %></button>
+
+          <div class="panel">
+          <p><%= task.content %></p>
+
+
+
+
+      </div>
     </div>
-    <%# <div class="container" id="task_content">
-      <p><%= task.content</p>
-    <%# </div>  %>
-  </div>
   <% end %>
 </div>

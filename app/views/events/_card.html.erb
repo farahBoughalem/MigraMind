@@ -5,13 +5,15 @@
           <%= link_to event_path(event) do %>
             <div class="card">
             <% if event.photo.attached? %>
+            <div class="card" id="individual_event">
               <%= cl_image_tag event.photo.key, height: 300, width: 400, class: "card-img-top", id: "reponsive"%>
             <% end %>
               <div class="card-body">
                 <h4 class="card-title" id="title" data-search-target="title"><%= event.name %></h5>
                 <h5 class="card-description" id="description"><%= event.description %></h5>
-                <h5 class="card-date" id="date"><%= event.date %></h5>
-                <h5 class="card-address" id="address"><%= event.address %></h5>
+                <h6 class="card-date" id="date"><%= event.date %></h5>
+                <h6 class="card-address" id="address"><%= event.address %></h5>
+                <button id= "button" type="button">Join Event</button>
               </div>
             </div>
           <% end %>
