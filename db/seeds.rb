@@ -3,6 +3,7 @@ puts "Deleting previous records"
 
 Post.destroy_all
 Event.destroy_all
+UserTask.destroy_all
 Task.destroy_all
 User.destroy_all
 Comment.destroy_all
@@ -60,6 +61,8 @@ file10 = URI.open("https://media.istockphoto.com/id/1372281808/photo/woman-face-
 user10 = User.new(first_name: "Mia", last_name: "Taylor", username: "mia_t", email: "mia.taylor@gmail.com", password: "123456")
 user10.photo.attach(io: file10, filename: "user10", content_type: "image/jpg")
 user10.save
+
+users = [user1, user2, user3, user4, user5, user6, user7, user8, user9, user10  ]
 
 puts "Done too little too late 😈"
 
@@ -135,6 +138,14 @@ Task.create([
 
   { title: "Get a SIM Card", content: "Obtain a local SIM card for your phone to have access to communication and data services." }
 ])
+
+puts "Creating User Tasks"
+
+users.each do |user|
+  Task.all.each do |task|
+    UserTask.create(user: user, task: task, status: false)
+  end
+end
 
 puts "Creating Event"
 
