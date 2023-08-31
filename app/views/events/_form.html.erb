@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-center mt-4">
+  <h1>Add Event</h1>
+</div>
+<div class="d-flex justify-content-center">
+  <%= simple_form_for @event, data: { controller: "datepicker", dates: @event } do |form| %>
+          <%= form.input :name, label: "Name" %>
+          <%= form.input :address, label: "Address" %>
+          <%= form.input :description, label: "Description" %>
+          <%= form.input :date,
+                         as: :string,
+                         label: "Date",
+                         input_html: { data: { datepicker_target: "date" } } %>
+          <%= form.input :photo, as: :file, label: "Photo" %>
+    <div class="d-flex justify-content-center">
+      <%= form.button :submit,  class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

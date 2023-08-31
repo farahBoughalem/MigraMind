@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @post = Post.new
+    @comment = Comment.new
 
     if params[:query].present?
       sql_query = <<~SQL
