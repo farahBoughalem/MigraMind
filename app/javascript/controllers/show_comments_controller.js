@@ -2,9 +2,9 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="show-comments"
 export default class extends Controller {
-  static targets = ["comments", "form", "card"]
+  static targets = ["comments", "form", "card", "sum"]
   connect() {
-    // console.log(this.formTarget)
+    // console.log(parseInt(this.sumTarget.innerHTML))
   }
   show() {
     // console.log("Hi")
@@ -23,6 +23,7 @@ export default class extends Controller {
     .then((data) => {
       const updatedContent = existingContent + data;
       this.commentsTarget.innerHTML = updatedContent;
+      this.sumTarget.innerHTML = parseInt(this.sumTarget.innerHTML) + 1
     })
   }
 }
