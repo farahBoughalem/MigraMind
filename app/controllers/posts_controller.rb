@@ -7,7 +7,7 @@ class PostsController < ApplicationController
         OR posts.content @@ :query
         OR comments.content @@ :query
       SQL
-      @posts = @posts.joins(:comments).where(sql_query, query: "%#{params[:query]}%")
+      @posts = @posts.left_outer_joins(:comments).where(sql_query, query: "%#{params[:query]}%").distinct
     end
   end
 end
