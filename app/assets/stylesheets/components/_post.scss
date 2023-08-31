@@ -97,3 +97,14 @@
 #comment-like-button{
   border-radius: 1rem;
 }
+
+.post-search-input{
+  background-color: $white;
+  border-radius: 1rem 0 0 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.post-search-button{
+  border-radius: 0 1rem 1rem 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

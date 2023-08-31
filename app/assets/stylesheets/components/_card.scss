@@ -17,6 +17,56 @@
   }
 }
 
-.event-card p{
+.event-card p, .event-card div{
   color: black;
+}
+
+.event-title{
+  font-family: $event-header;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+#event-img-container{
+  height: 45vh;
+  width: 100vw;
+  overflow: hidden;
+  img{
+    object-fit: cover;
+  }
+}
+
+#event-wrapper{
+  position: relative;
+  button{
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+    border: 0.1rem solid black;
+  }
+}
+
+.event-floatin-card{
+  background-color: $white;
+  width: 70vw;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: absolute;
+  top: 10rem;
+  left: 3.5rem;
+  img{
+    border-radius: 50%;
+    border: 0.1rem solid white;
+  }
+  button{
+    font-weight: bold;
+  }
+}
+
+#going-back{
+  position: absolute;
+  top: 1.6rem;
+  left: 0.9rem;
 }

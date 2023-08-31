@@ -30,6 +30,7 @@ class EventsController < ApplicationController
 
   def show
     @host = @event.user
+    @event = Event.find(params[:id])
   end
 
   def edit

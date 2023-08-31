@@ -1,10 +1,16 @@
-<div id="card1" class="card event-card" data-search-target="card">
+<div id="card1" class="card event-card">
   <%= link_to event_path(event) do %>
     <%= cl_image_tag event.photo.key, height: 300, width: 400, class: "card-img-top", id: "reponsive"%>
     <div class="card-body">
-      <p class="card-title" id="title" data-search-target="title"><%= event.name %></p>
-      <p><i class="fa-solid fa-clock"></i><%= event.date %></p>
-      <p><i class="fa-solid fa-location-dot"></i><%= event.address %></p>
+      <p class="card-title event-title"><%= event.name %></p>
+      <div class="event-date">
+        <i class="fa-solid fa-clock"></i>
+        <%= event.date %>
+      </div>
+      <div>
+        <i class="fa-solid fa-location-dot"></i>
+        <%= event.address %>
+      </div>
     </div>
   <% end %>
 </div>

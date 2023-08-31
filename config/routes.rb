@@ -9,8 +9,7 @@ Rails.application.routes.draw do
       resources :likes, only: %i[new create]
     end
   end
-  resources :events, only: %i[index new]
-  resources :events
+  resources :events, only: %i[index new create show]
 
   resources :tasks do
     resources :user_tasks, only: [:index, :update]
