@@ -7,15 +7,19 @@
 }
 .user_task_container {
   border: 3px solid black;
+}
+
+
+.user_task_card h2 {
+  font-size: 16px;
 
 }
 
-#user_task_title {
-  font-weight: bold;
-}
+
 
 #user_header_container h1 {
   font-weight: bold;
+  margin-top: 10px;
 }
 
 #checkbox {
@@ -25,4 +29,25 @@
 
 #user_task_content {
   // margin-right: 1em;
+}
+
+
+.user_task_card{
+  display: flex;
+    align-items: center;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+
+.checkbox-user-task {
+  margin-right: 20px;
+}
+
+.active-user-task_card{
+  background-color: rgb(254, 251, 251);
+    position: relative;
+    top: -26px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }

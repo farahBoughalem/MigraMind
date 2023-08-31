@@ -1,11 +1,5 @@
-#header_container h1 {
-  // margin-bottom: 50px;
-  // margin-top: 50px;
-  // margin-left: 10px;
-
-}
 .task_container {
-  // border: 3px solid black;
+  border-radius: 20px;
 }
 
 #task_title {
@@ -16,6 +10,8 @@
 
 #header_container h1 {
   font-weight: bold;
+  font-family: $headers-font;
+  // "Nunito", "Helvetica", "sans-serif";
 }
 
 // #checkbox {
@@ -54,7 +50,7 @@
   transition: max-height 0.2s ease-out;
 }
 
-.accordion:before {
+.accordion:after {
   content: '\02795'; /* Unicode character for "plus" sign (+) */
   font-size: 13px;
   color: #777;
@@ -64,4 +60,17 @@
 
 .active:after {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
 }
