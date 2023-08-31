@@ -1,15 +1,15 @@
 <%# Create cards of each individual event %>
- <div class="card col-11 col-md-6" id="event">
+ <div class="card" id="event">
       <% events.each do |event| %>
         <div id="card1" data-search-target="card">
-          <% link_to event_path(event) do %>
+          <%= link_to event_path(event) do %>
             <div class="card">
-              <%# <% cl_image_tag event.photo.key, height: 300, width: 400 class: "card-img-top", id: "reponsive"%> %>
+              <%= cl_image_tag event.photo.key, height: 300, width: 400, class: "card-img-top", id: "reponsive"%>
               <div class="card-body">
                 <h4 class="card-title" id="title" data-search-target="title"><%= event.name %></h5>
                 <h5 class="card-description" id="description"><%= event.description %></h5>
                 <h5 class="card-date" id="date"><%= event.date %></h5>
-                <h5 class="card-date" id="date"><%= event.address %></h5>
+                <h5 class="card-address" id="address"><%= event.address %></h5>
               </div>
             </div>
           <% end %>
@@ -17,3 +17,6 @@
       <% end %>
     </div>
 </div>
+
+
+<%# col-11 col-md-6 %>
