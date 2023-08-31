@@ -1,10 +1,47 @@
-#event {
-  border: 3px solid black;
+#individual_event {
+  // border: 3px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 25px;
+  // background-color: $white;
+  // border-radius: 5%;
+  border-color: black;
+  // border: none;
 }
 
+.card-img-top {
+
+  width: 100%;
+  // border-radius: 10px;
+}
+
+
+.card-title {
+  font-weight: bold ;
+
+}
+
+
+.card-description {
+  font-size: 15px;
+  margin-bottom: 18px;
+  margin-top: 15px;
+}
+
+.card-date {
+  font-size: 12px;
+}
+
+.card-address {
+  font-size: 12px;
+}
 // .card {
 //   --bs-card-spacer-x: 2rem;
 // }
+
+#button {
+  border-radius: 10px;
+  margin-top: 10px;
+  float: right;
+}
