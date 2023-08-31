@@ -1,22 +1,20 @@
-<div class="d-flex justify-content-center mt-4">
-  <h1>Add Event</h1>
-</div>
-<div class="d-flex justify-content-center">
-  <%= simple_form_for @event, data: { controller: "datepicker", dates: @event } do |form| %>
-          <%= form.input :name, label: "Name" %>
-          <%= form.input :address,
-                         label: "Address",
-                         input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+<div data-new-post-target="addEvent" class="d-none">
+  <div class="newEvent" >
+      <h5 class="h5color">Add event</h5>
+      <%= simple_form_for @event, data: { controller: "datepicker", dates: @event } do |form| %>
+              <%= form.input :name, label: false, placeholder: "Event's name", input_html: {class: "simple-form"} %>
+              <%= form.input :address, label: false, placeholder: "Address", input_html: {class: "simple-form", data: {address_autocomplete_target: "address"}, class: "d-none"},
                          wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value:
                          ENV["MAPBOX_API_KEY"]}} %>
-          <%= form.input :description, label: "Description" %>
-          <%= form.input :date,
-                         as: :string,
-                         label: "Date",
-                         input_html: { data: { datepicker_target: "date" } } %>
-          <%= form.input :photo, as: :file, label: "Photo" %>
-    <div class="d-flex justify-content-center">
-      <%= form.button :submit,  class: "btn btn-primary" %>
-    </div>
-  <% end %>
+              <%= form.input :description, label: false, placeholder: "Tell more about the event", input_html: {class: "simple-form"} %>
+              <%= form.input :date,
+                            as: :string,
+                            label: false,
+                            input_html: { data: { datepicker_target: "date" }, class: "simple-form" } %>
+              <%= form.input :photo, as: :file, label: false, input_html: {class: "simple-form"} %>
+              <%= button_tag(class: "button") do %>
+              <a class="submit"><i class="fa-solid fa-paper-plane"></i></a>
+              <% end %>
+      <% end %>
+  </div>
 </div>

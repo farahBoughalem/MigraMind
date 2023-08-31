@@ -2,22 +2,25 @@
   <div class="container" id="user_header_container">
   <h1 class="p-2">User Tasks</h1>
   </div>
+ </div>
 
-  <div class="container" id="user_tasks_container">
-  <% current_user.user_tasks.each do |user_task|  %>
-  <% actual_task = Task.find(user_task.task_id) %>
-    <div class="user_task_container my-3 p-2">
-        <div class="container" id="user_task_title">
-          <p>
-          <h2><%= actual_task.title %></h2>
-          <%= simple_form_for [actual_task, user_task], remote: true do |f| %>
-            <% f.check_box :status, {checked: user_task.status == true, onchange: 'this.form.submit()'}, true, false %>
-          <% end %>
-          </p>
-        </div>
-        <div class="container" id="user_task_content">
-          <p><%= actual_task.content %></p>
-        </div>
+<div class="container">
+  <% @user_tasks.each do |user_task|  %>
+    <div  data-controller="olivas-accordion">
+      <div class="user_task_card my-3 p-2">
+                <%= simple_form_for [user_task.task, user_task] do |f| %>
+                  <% f.check_box :status, {checked: user_task.status == true, onchange: 'this.form.submit()', class: "checkbox-user-task" }, true, false %>
+                <% end %>
+                <h2><%= user_task.task.title %></h2>
+
+
+              <button style="background: transparent;border: none;" data-action="click->olivas-accordion#toggleAccordion">
+                  <h2 data-olivas-accordion-target="symbol">+</h2>
+              </button>
       </div>
+       <div data-olivas-accordion-target="content" class="d-none">
+            <p class="p-2"><%= user_task.task.content %></p>
+        </div>
+    </div>
     <% end %>
   </div>

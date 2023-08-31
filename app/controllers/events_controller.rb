@@ -3,6 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @event = Event.new
 
     @markers = @events.geocoded.map do |event|
       {
@@ -20,8 +21,8 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @events.user = current_user
-    if @events.save!
+    @event.user = current_user
+    if @event.save!
       redirect_to event_path(@event)
     else
       render :new, status: :unprocessable_entity
@@ -49,7 +50,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    redirect_to event_path, status: :see_other
+    redirect_to events_path, status: :see_other
   end
 
   private

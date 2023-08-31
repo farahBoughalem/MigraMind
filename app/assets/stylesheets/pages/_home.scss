@@ -3,3 +3,7 @@ body{
   background-color: $body-background;
   margin-bottom: 5rem;
 }
+
+footer {
+  overscroll-behavior: none;
+}
