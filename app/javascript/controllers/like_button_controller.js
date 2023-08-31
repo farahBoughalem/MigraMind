@@ -24,9 +24,8 @@ export default class extends Controller {
       })
         .then(response => response.json())
         .then(data => {
-          console.log("Like created successfully:", data);
+          // console.log("Like created successfully:", data);
           this.sumTarget.innerHTML = parseInt(this.sumTarget.innerHTML) + 1
-          // this.buttonTarget.classList.add("black-stroke")
           this.containerTarget.classList.remove("blacky")
           this.containerTarget.classList.add("greeny")
         })
@@ -43,7 +42,7 @@ export default class extends Controller {
       })
       .then(response => response.json())
       .then(data => {
-        console.log("Like created successfully:", data);
+        // console.log("Like created successfully:", data);
         this.sumTarget.innerHTML = parseInt(this.sumTarget.innerHTML) + 1
         this.containerTarget.classList.remove("blacky")
         this.containerTarget.classList.add("greeny")
