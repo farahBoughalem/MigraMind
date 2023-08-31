@@ -9,5 +9,6 @@ export default class extends Controller {
 
   reveal() {
     this.formTarget.classList.toggle("d-none");
+    
   };
 }
