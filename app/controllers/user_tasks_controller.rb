@@ -5,7 +5,7 @@ class UserTasksController < ApplicationController
   # end
 
   def index
-    @user_tasks = UserTask.all
+    @user_tasks = current_user.user_tasks.order(:id)
 
   end
 
