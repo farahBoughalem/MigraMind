@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :tasks, through: :user_tasks
   has_many :user_tasks
   has_many :attendees
-
+  has_many :joined_events, through: :attendees, source: :event
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :username, presence: true, uniqueness: true

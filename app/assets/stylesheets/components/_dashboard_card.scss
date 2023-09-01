@@ -1,0 +1,41 @@
+.dashboard-main {
+  margin-left: 1rem;
+  max-width: 100svw;
+  max-height: 100svh;
+}
+
+.my-events {
+  display: grid;
+  grid-column: auto 1fr auto;
+  max-width: 90svw;
+  max-height: 90svh;
+  margin-top: 1rem;
+  gap: 1rem;
+
+  h4 {
+    font-weight: bold;
+  }
+}
+
+.user-floating-card {
+  background-color: $white;
+  margin: auto;
+  width: 90svw;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.join-events {
+  display: grid;
+  grid-column: auto 1fr auto;
+  max-width: 90svw;
+  max-height: 90svh;
+  margin-top: 4rem;
+  gap: 1rem;
+
+  h4 {
+    font-weight: bold;
+  }
+
+}
