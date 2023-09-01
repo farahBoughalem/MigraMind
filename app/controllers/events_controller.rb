@@ -5,6 +5,15 @@ class EventsController < ApplicationController
     @events = Event.all
     @event = Event.new
 
+    if params[:query].present?
+      sql_query = <<~SQL
+        events.name @@ :query
+        OR events.description @@ :query
+        OR events.address @@ :query
+      SQL
+      @events = @events.where(sql_query, query: "%#{params[:query]}%").distinct
+    end
+
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
@@ -13,6 +22,7 @@ class EventsController < ApplicationController
         marker_html: render_to_string(partial: "marker")
       }
     end
+
   end
 
   def new
