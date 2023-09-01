@@ -5,8 +5,6 @@ export default class extends Controller {
 
   static targets = ["symbol", "content"]
   connect() {
-    console.log("hello motto")
-    console.log(this.contentTarget)
 
   }
 

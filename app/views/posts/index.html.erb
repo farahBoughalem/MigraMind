@@ -1,5 +1,5 @@
-<div data-controller="blur" data-blur-target="posts" class="" data-action="click->blur#blur">
-  <div class="row justify-content-center">
+
+  <div class="d-flex justify-content-center">
     <div class="col-8 my-3">
       <%= form_with url: root_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
@@ -14,20 +14,19 @@
     </div>
   </div>
 
-  <% @posts.each do |post| %>
-    <div class="card col-11 col-md-6" id="post" data-controller="show-comments">
-      <div class="card-body">
-        <%= render 'post', post: post %>
+<% @posts.each do |post| %>
+  <div class="card col-11 col-md-6" id="post" data-controller="show-comments">
+    <div class="card-body">
+      <%= render 'post', post: post %>
 
-        <div class="comments d-none" data-show-comments-target="comments">
+      <div class="comments d-none" data-show-comments-target="comments">
 
-          <%= render 'commentform', post: post, comment: @comment %>
+        <%= render 'commentform', post: post, comment: @comment %>
 
-          <% post.comments.each do |comment| %>
-            <%= render 'comment', comment: comment, post: post %>
-          <% end %>
-        </div>
+        <% post.comments.each do |comment| %>
+          <%= render 'comment', comment: comment, post: post %>
+        <% end %>
       </div>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>

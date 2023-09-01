@@ -1,6 +1,33 @@
-<%# Display individual events %>
-
-@event
-@host
-
-<h1> @event.name </h1>
+<div id="event-wrapper">
+  <div id="event-img-container">
+    <% if @event.photo.attached? %>
+      <%= cl_image_tag @event.photo.key, height: 300, width: 400, class: "card-img-top", id: "reponsive"%>
+    <% end %>
+  </div>
+  <div class="event-floatin-card">
+    <div class="d-flex justify-content-center">
+      <div class="user-border" style="display: inline-block">
+        <%= cl_image_tag @event.user.photo.key, width: 45, height: 45, crop: :thumb, gravity: :face %>
+      </div>
+    </div>
+    <p class="event-title"><%= @event.name %></p>
+    <div class="small-grey-text">
+      <i class="fa-solid fa-clock"></i>
+      <%= @event.date %>
+    </div>
+    <div class="small-grey-text">
+      <i class="fa-solid fa-location-dot"></i>
+      <%= @event.address %>
+    </div>
+    <button class="btn btn-success">Join</button>
+  </div>
+  <div id="going-back">
+    <%= link_to events_path do %>
+      <button class="btn btn-success"><i class="fa-solid fa-backward"></i></button>
+    <% end %>
+  </div>
+</div>
+<div class="col-11 col-md-6 mx-auto mt-3 p-3">
+  <p class="border-bottom fw-bold">DETAILS</p>
+  <p><%= @event.description %></p>
+</div>
