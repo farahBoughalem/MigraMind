@@ -1,17 +1,6 @@
-#user_header_container {
-  // margin-bottom: 50px;
-  // margin-top: 50px;
-  // margin-left: 10px;
-
-
-}
 .user_task_container {
   border: 3px solid black;
 }
-
-// #header_container h2 {
-//   margin-right: auto;
-// }
 
 .user_task_card h2 {
   font-size: 16px;
@@ -19,7 +8,6 @@
   margin-right: auto;
 
 }
-
 
 
 #user_header_container h1 {
@@ -30,10 +18,6 @@
 #checkbox {
   margin-left: -0.9rem;
   margin-right: 0.5rem;
-}
-
-#user_task_content {
-  // margin-right: 1em;
 }
 
 
@@ -62,9 +46,6 @@
 
 }
 
-// .button {
-//   margin-right: auto;
-// }
 
 .accordion:after {
   margin-right: auto;
@@ -72,7 +53,7 @@
   border-bottom-left-radius: 0;
 }
 
-h5 {
+#user_container1 h5 {
   font-weight: bolder;
   margin-top: 20px;
   margin-left: -2px;
@@ -81,11 +62,6 @@ h5 {
 
 }
 
-p {
+#user-task-container p {
   margin-top: 28px;
 }
-
-// button:not(:disabled) {
-
-//   border-bottom-left-radius: 0;
-// }

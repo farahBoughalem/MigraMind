@@ -1,18 +1,18 @@
-<div class="col-11 col-md-6 events-cards-container">
-    <div class="row justify-content-center">
-    <div class="col-8 my-3">
-      <%= form_with url: events_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-              params[:query],
-              class: "form-control post-search-input",
-              placeholder: "Type a keyword"
-          %>
-        <%= button_tag(type: "submit", class: "btn btn-success post-search-button") do %>
-          <i class="fa-solid fa-magnifying-glass"></i>
-        <% end %>
+<div class="d-flex justify-content-center">
+  <div class="col-8 my-3">
+    <%= form_with url: events_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control post-search-input",
+            placeholder: "Type a keyword"
+        %>
+      <%= button_tag(type: "submit", class: "btn btn-success post-search-button") do %>
+        <i class="fa-solid fa-magnifying-glass"></i>
       <% end %>
-    </div>
+    <% end %>
   </div>
+</div>
+<div class="col-11 col-md-6 events-cards-container">
 
   <% @events.each do |event| %>
     <%= render "card", event: event %>
