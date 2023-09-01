@@ -1,5 +1,5 @@
 <div id="card1" class="card event-card">
-  <%= link_to event_path(event) do %>
+  <%= link_to events_path(event) do %>
     <% if event.photo.attached? %>
       <%= cl_image_tag event.photo.key, height: 300, width: 400, class: "card-img-top", id: "reponsive"%>
     <% end %>
