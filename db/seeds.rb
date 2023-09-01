@@ -1,6 +1,6 @@
 puts "Deleting previous records"
 
-
+  
 Post.destroy_all
 Event.destroy_all
 UserTask.destroy_all
