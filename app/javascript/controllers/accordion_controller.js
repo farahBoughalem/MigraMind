@@ -6,7 +6,6 @@ export default class extends Controller {
   static targets = ["accordion"]
 
   connect() {
-    console.log("hello from accordion")
     this.activateAccordion()
   }
 
