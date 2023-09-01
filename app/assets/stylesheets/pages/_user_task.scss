@@ -9,9 +9,14 @@
   border: 3px solid black;
 }
 
+// #header_container h2 {
+//   margin-right: auto;
+// }
 
 .user_task_card h2 {
   font-size: 16px;
+  margin-top: 9px;
+  margin-right: auto;
 
 }
 
@@ -34,9 +39,13 @@
 
 .user_task_card{
   display: flex;
-    align-items: center;
-    background-color: lightgray;
-    border-radius: 10px;
+  align-items: center;
+  background-color: lightgray;
+  border-radius: 10px;
+  height: 44px;
+  padding: 10px;
+  background-color:#a8c6a3;
+    // padding-top: 20 px;
 }
 
 
@@ -45,9 +54,38 @@
 }
 
 .active-user-task_card{
-  background-color: rgb(254, 251, 251);
-    position: relative;
-    top: -26px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+  background-color: white;
+  position: relative;
+  top: -26px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+
 }
+
+// .button {
+//   margin-right: auto;
+// }
+
+.accordion:after {
+  margin-right: auto;
+  margin-bottom: 10px;
+  border-bottom-left-radius: 0;
+}
+
+h5 {
+  font-weight: bolder;
+  margin-top: 20px;
+  margin-left: -2px;
+  margin-bottom: 22px;
+  color: #1a0b0b;
+
+}
+
+p {
+  margin-top: 28px;
+}
+
+// button:not(:disabled) {
+
+//   border-bottom-left-radius: 0;
+// }
