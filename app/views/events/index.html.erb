@@ -1,5 +1,7 @@
-<%# Display all events %>
+<div class="col-11 col-md-6 events-cards-container">
+  <% @events.each do |event| %>
+    <%= render "card", event: event %>
+  <% end %>
+</div>
 
-<h1> Events </h1>
-<%= render "card", events: @events %>
 <%= render "map", events: @events %>

@@ -12,7 +12,7 @@
   </div>
   <div>
     <button class="btn btn-light" id="comment-like-button" >
-      <a href="#" id="comment-like-link" data-controller="like-button" data-like-button-post-id="<%= post.id %>" data-like-button-comment-id="<%= comment.id %>" data-like-button-likable-type="comment" data-action="click->like-button#like">
+      <a href="#" id="comment-like-link" data-controller="like-button" data-like-button-post-id="<%= comment.post_id %>" data-like-button-comment-id="<%= comment.id %>" data-like-button-likable-type="comment" data-action="click->like-button#like">
         <div class="comment-likes-container blacky" data-like-button-target="container">
           <i class="fa-solid fa-heart"></i>
           <span data-like-button-target="sum" id="comment-sum"><%= comment.likes.count %></span>

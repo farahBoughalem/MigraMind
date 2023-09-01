@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resources :likes, only: %i[new create]
     end
   end
+
   resources :events, only: %i[index show new create]
 
   resources :tasks do
