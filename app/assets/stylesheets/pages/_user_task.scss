@@ -21,15 +21,19 @@
 }
 
 
-.user_task_card{
+.user_task_card {
   display: flex;
   align-items: center;
   background-color: lightgray;
   border-radius: 10px;
   height: 44px;
-  padding: 10px;
-  background-color:#a8c6a3;
-    // padding-top: 20 px;
+  padding: 15px;
+  // background-color:#a8c6a3;
+  // background-color: #76d5c8;
+  box-shadow:  1px 1px 1px black;
+  background-color: #13c8ab75;
+  // background: rgb(168, 166, 216);
+  // background: (90deg, #6ab4be 0%, #65c0c8 35%, #6bbfc7 100%);
 }
 
 
@@ -43,14 +47,13 @@
   top: -26px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-
 }
 
 
 .accordion:after {
   margin-right: auto;
   margin-bottom: 10px;
-  border-bottom-left-radius: 0;
+  // border-bottom-left-radius: 0;
 }
 
 #user_container1 h5 {
@@ -59,6 +62,7 @@
   margin-left: -2px;
   margin-bottom: 22px;
   color: #1a0b0b;
+  text-shadow: #c1bebe -1px 3px 10px;
 
 }
 

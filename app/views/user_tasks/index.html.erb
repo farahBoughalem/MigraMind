@@ -7,7 +7,7 @@
 <div class="container" id="user-task-container">
   <% @user_tasks.each do |user_task|  %>
     <div  data-controller="olivas-accordion">
-      <div class="user_task_card my-3 p-2">
+      <div class="user_task_card my-3">
                 <%= simple_form_for [user_task.task, user_task] do |f| %>
                   <% f.check_box :status, {checked: user_task.status == true, onchange: 'this.form.submit()', class: "checkbox-user-task" }, true, false %>
                 <% end %>
@@ -24,3 +24,6 @@
     </div>
     <% end %>
   </div>
+
+
+ <%# <div class="user_task_card my-3 p-2"> %>
