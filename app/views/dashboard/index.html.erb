@@ -4,6 +4,7 @@
     <h4>My events</h4>
       <% @my_events.each do |event| %>
       <div class="user-floating-card">
+        <%= link_to event_path(event) do %>
           <p class="event-title"><%= event.name %></p>
           <div class="small-grey-text">
             <i class="fa-solid fa-clock"></i>
@@ -13,8 +14,8 @@
             <i class="fa-solid fa-location-dot"></i>
             <%= event.address %>
           </div>
-        </div>
-    <% link_to event_path(event) %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 

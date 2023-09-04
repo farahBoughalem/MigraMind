@@ -22,9 +22,11 @@
 }
 
 .event-title{
-  font-family: $event-header;
+  // font-family: $event-header;
   font-size: 1.3rem;
+  font-weight: bold;
   margin: 0;
+  color: black;
 }
 
 #event-img-container{
@@ -71,4 +73,11 @@
   left: 0.9rem;
 }
 
+.event-greeny-text{
+  color: $success;
+  font-weight: bold;
+}
 
+#join-button{
+  width: 100%;
+}

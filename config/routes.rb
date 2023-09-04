@@ -14,12 +14,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :events, only: %i[index show new create]
+  resources :events, only: %i[index show new create] do
+    member do
+      post 'join'
+    end
+  end
 
   resources :tasks do
     resources :user_tasks, only: [:index, :update]
   end
 
   resources :user_tasks, only: :index
-  #Is this really necessary?
 end
