@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'dashboard#index', as: 'user_dashboard'
   devise_for :users, controllers: { registrations: 'registrations' }
 
-  root to: "posts#index"
+  root to: "landing#index"
 
   resources :posts, only: %i[index new create] do
     resources :likes, only: %i[new create]
