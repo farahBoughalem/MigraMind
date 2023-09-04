@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'dashboard#index', as: 'user_dashboard'
   devise_for :users, controllers: { registrations: 'registrations' }
 
-  root to: "posts#index"
+  root to: "landing#index"
 
   resources :posts, only: %i[index new create] do
     resources :likes, only: %i[new create]
@@ -14,12 +14,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :events, only: %i[index show new create]
+  resources :events, only: %i[index show new create] do
+    member do
+      post 'join'
+    end
+  end
 
   resources :tasks do
     resources :user_tasks, only: [:index, :update]
   end
 
   resources :user_tasks, only: :index
-  #Is this really necessary?
 end

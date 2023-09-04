@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :set_attributes, only: %i[show edit update destroy]
 
   def index
-    @events = Event.all
+    @events = Event.where.not(user: current_user)
     @event = Event.new
 
     if params[:query].present?
@@ -22,7 +22,6 @@ class EventsController < ApplicationController
         marker_html: render_to_string(partial: "marker")
       }
     end
-
   end
 
   def new
@@ -42,6 +41,7 @@ class EventsController < ApplicationController
   def show
     @host = @event.user
     @event = Event.find(params[:id])
+    @attendee = Attendee.where(user: current_user, event: @event)
     @markers = [{
         lat: @event.latitude,
         lng: @event.longitude,
@@ -67,6 +67,12 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     redirect_to events_path, status: :see_other
+  end
+
+  def join
+    @event = Event.find(params[:id])
+    current_user.attendees.create(event: @event)
+    redirect_to event_path(@event), notice: "You have joined the event."
   end
 
   private

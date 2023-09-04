@@ -1,41 +1,53 @@
 .dashboard-main {
   margin-left: 1rem;
-  max-width: 100svw;
+  max-width: 95svw;
   max-height: 100svh;
+  margin-top: 1rem;
 }
 
 .my-events {
-  display: grid;
-  grid-column: auto 1fr auto;
-  max-width: 90svw;
-  max-height: 90svh;
-  margin-top: 1rem;
-  gap: 1rem;
+  margin-top: 4rem;
 
   h4 {
     font-weight: bold;
   }
+}
+
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.my-events a {
+  text-decoration: none;
+  color: $black;
 }
 
 .user-floating-card {
   background-color: $white;
   margin: auto;
-  width: 90svw;
+  width: 60svw;
+  height: 15svh;
   padding: 0.5rem;
   border-radius: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: 5px 5px 5px 0px #a4a4a4, inset 2px 2px 10px 0px #d3d3d3, -3px 2px 7px -1px rgba(197, 197, 197, 0);
+  flex: 0 0 auto;
+  margin-bottom: 3rem;
 }
 
 .join-events {
-  display: grid;
-  grid-column: auto 1fr auto;
-  max-width: 90svw;
-  max-height: 90svh;
-  margin-top: 4rem;
-  gap: 1rem;
+  margin-top: 2rem;
 
   h4 {
     font-weight: bold;
   }
 
+}
+
+.join-events a {
+  text-decoration: none;
+  color: $black;
 }

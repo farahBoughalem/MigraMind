@@ -1,0 +1,35 @@
+#landing-container{
+  height: 46.2vh;
+  width: 100vw;
+  // border: 1px black solid;
+  background: url("landing_background.png");
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
+}
+#landing-details{
+  height: 45.9vh;
+  width: 100vw;
+  // border: 1px black solid;
+  background: $white;
+}
+
+#landing-details{
+  padding: 0 1rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  div{
+    display: flex;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  p{
+    font-size: 0.85rem;
+    margin: 0;
+  }
+  i{
+    font-size: 1.6rem;
+  }
+}
