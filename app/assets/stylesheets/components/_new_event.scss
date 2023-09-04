@@ -36,8 +36,20 @@ div .mapboxgl-ctrl-geocoder--icon-search {
   left: 4px;
 }
 
+
 // .light-create {
 //   color: $white;
 //   background: $petroleum;
 //   border-radius: 0.5rem;
 // }
+
+#going-back {
+  display: flex;
+  // align-items: center;
+  justify-content: space-between;
+}
+
+#edit_button {
+  // margin-left: 275px;
+}
+

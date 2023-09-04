@@ -5,4 +5,8 @@ class Post < ApplicationRecord
 
   validates :content, presence: true
   validates :category, presence: true
+
+  def liked_by_current_user?(user)
+    likes.find_by(likable_id: id, user:) ? true : false
+  end
 end

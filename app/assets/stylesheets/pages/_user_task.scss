@@ -6,7 +6,7 @@
   font-size: 16px;
   margin-top: 9px;
   margin-right: auto;
-
+  font-weight: 600;
 }
 
 
@@ -24,17 +24,12 @@
 .user_task_card{
   display: flex;
   align-items: center;
-  background-color: lightgray;
-  border-radius: 10px;
   height: 44px;
-  padding: 10px;
-  background-color:#a8c6a3;
-    // padding-top: 20 px;
-    button:not(:disabled) {
-      margin: -3px;
-      // border-bottom-left-radius: 0;
-    }
-}
+  padding: 15px;
+  box-shadow:  1px 1px 1px black;
+  background-color: #03c8b3ba;
+  margin-bottom: 1.5rem;
+  }
 
 
 .checkbox-user-task {
@@ -45,24 +40,24 @@
   background-color: white;
   position: relative;
   top: -26px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 
 .accordion:after {
   margin-right: auto;
   margin-bottom: 10px;
-  border-bottom-left-radius: 0;
+  // border-bottom-left-radius: 0;
 }
 
 #user_container1 h5 {
   font-weight: bolder;
   margin-top: 20px;
   margin-left: -2px;
-  margin-bottom: 22px;
+  margin-bottom: 28px;
   color: #1a0b0b;
+  text-shadow: #c1bebe -1px 3px 10px;
 
 }
 
