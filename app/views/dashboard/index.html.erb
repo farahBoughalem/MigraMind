@@ -24,6 +24,7 @@
     <h4>Joined events</h4>
     <% @joined_events.each do |event| %>
       <div class="user-floating-card">
+        <%= link_to event_path(event) do %>
           <p class="event-title"><%= event.name %></p>
           <div class="small-grey-text">
             <i class="fa-solid fa-clock"></i>
@@ -33,7 +34,8 @@
             <i class="fa-solid fa-location-dot"></i>
             <%= event.address %>
           </div>
-        </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
