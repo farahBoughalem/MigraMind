@@ -21,10 +21,13 @@
                 <% end %>
               </li>
               <li>
+                <% if @user_tasks.nil? %>
                 <% type = @post.nil? ? "event" : "post" %>
                 <div class="icons" id="plus" data-action="click->new-post#reveal"
                   data-new-post-type = "<%= type %>">
                 <i class="fa-solid fa-circle-plus"></i></div>
+                
+                <% end %>
               </li>
               <li class="icons">
                 <%= link_to user_tasks_path do %>
