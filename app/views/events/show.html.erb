@@ -36,6 +36,13 @@
     <%= link_to events_path do %>
       <button class="btn" id="button-style"><i class="fa-solid fa-circle-arrow-left"></i></button>
     <% end %>
+      <div id="edit_button">
+      <% if @event.user == current_user %>
+        <%= link_to edit_event_path(@event) do %>
+          <button class="btn" id="button-style"><i class="fa fa-pencil"></i></button></div>
+        <% end %>
+        <% end %>
+      </div>
   </div>
 </div>
 <div class="d-flex flex-column justify-content-center mt-3" data-controller="toggle">
@@ -57,4 +64,3 @@
     </div>
   </div>
 </div>
-<%# border-bottom fw-bold %>
