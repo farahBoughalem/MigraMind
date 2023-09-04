@@ -1,38 +1,44 @@
 <div class="dashboard-main">
-  <h3>Hello, <%= current_user.first_name %>!</h3>
+  <h3>Welcome, <%= current_user.first_name %></h3>
   <div class="my-events">
     <h4>My events</h4>
-      <% @my_events.each do |event| %>
-      <div class="user-floating-card">
-          <p class="event-title"><%= event.name %></p>
-          <div class="small-grey-text">
-            <i class="fa-solid fa-clock"></i>
-            <%= event.date %>
+    <div class="scrolling-wrapper">
+        <% @my_events.each do |event| %>
+          <%= link_to event_path(event) do %>
+        <div class="user-floating-card">
+            <p class="event-title"><%= event.name %></p>
+            <div class="small-grey-text">
+              <i class="fa-solid fa-clock"></i>
+              <%= event.date %>
+            </div>
+            <div class="small-grey-text">
+              <i class="fa-solid fa-location-dot"></i>
+              <%= event.address %>
+            </div>
           </div>
-          <div class="small-grey-text">
-            <i class="fa-solid fa-location-dot"></i>
-            <%= event.address %>
-          </div>
-        </div>
-    <% link_to event_path(event) %>
-    <% end %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-
 
   <div class="join-events">
     <h4>Joined events</h4>
-    <% @joined_events.each do |event| %>
-      <div class="user-floating-card">
-          <p class="event-title"><%= event.name %></p>
-          <div class="small-grey-text">
-            <i class="fa-solid fa-clock"></i>
-            <%= event.date %>
+    <div class="scrolling-wrapper">
+      <% @joined_events.each do |event| %>
+      <%= link_to event_path(event) do %>
+        <div class="user-floating-card">
+            <p class="event-title"><%= event.name %></p>
+            <div class="small-grey-text">
+              <i class="fa-solid fa-clock"></i>
+              <%= event.date %>
+            </div>
+            <div class="small-grey-text">
+              <i class="fa-solid fa-location-dot"></i>
+              <%= event.address %>
+            </div>
           </div>
-          <div class="small-grey-text">
-            <i class="fa-solid fa-location-dot"></i>
-            <%= event.address %>
-          </div>
-        </div>
-    <% end %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

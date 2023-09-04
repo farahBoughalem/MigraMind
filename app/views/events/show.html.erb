@@ -19,11 +19,20 @@
       <i class="fa-solid fa-location-dot"></i>
       <%= @event.address %>
     </div>
-    <button class="btn btn-success">Join</button>
+    <% if @attendee.empty? && @event.user != current_user %>
+      <%= link_to join_event_path(@event), data: { turbo_method: :post } do %>
+        <button class="btn btn-success" id="join-button">Join</button>
+      <% end %>
+    <% elsif @event.user != current_user %>
+      <div class="event-greeny-text">
+        <i class="fa-solid fa-file-signature"></i>
+        joined!
+      </div>
+    <% end %>
   </div>
   <div id="going-back">
     <%= link_to events_path do %>
-      <button class="btn btn-success"><i class="fa-solid fa-backward"></i></button>
+      <button class="btn" id="button-style"><i class="fa-solid fa-circle-arrow-left"></i></button>
     <% end %>
   </div>
 </div>
