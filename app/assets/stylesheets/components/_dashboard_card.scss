@@ -28,14 +28,18 @@
 
 .user-floating-card {
   background-color: $white;
-  margin: auto;
   width: 60svw;
-  height: 15svh;
-  padding: 0.5rem;
+  height: 20svh;
+  padding: 1rem;
   border-radius: 1rem;
-  box-shadow: 5px 5px 5px 0px #a4a4a4, inset 2px 2px 10px 0px #d3d3d3, -3px 2px 7px -1px rgba(197, 197, 197, 0);
+  box-shadow: 5px 5px 5px 0px #c9c9c9, inset 2px 2px 10px 0px #dedddd, -3px 2px 7px -1px rgba(222, 221, 221, 0.148);
   flex: 0 0 auto;
   margin-bottom: 3rem;
+
+  #delete {
+    color: $dark-gray;
+    margin-left: 90%;
+  }
 }
 
 .join-events {
