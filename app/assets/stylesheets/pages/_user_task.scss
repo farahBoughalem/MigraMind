@@ -21,7 +21,6 @@
 }
 
 
-
 #user_header_container h1 {
   font-weight: bold;
   margin-top: 10px;
@@ -46,6 +45,10 @@
   padding: 10px;
   background-color:#a8c6a3;
     // padding-top: 20 px;
+    button:not(:disabled) {
+      margin: -3px;
+      // border-bottom-left-radius: 0;
+    }
 }
 
 

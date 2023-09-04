@@ -11,14 +11,16 @@
 
 footer {
   background: $rainbow;
-  border: 0.1rem solid $white;
+  border: 0.15rem solid $white;
   border-radius: 1.8rem;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
   bottom: 0;
   position: fixed;
-  width: 98svw;
-  margin-left: 0.2rem;
+  width: 100svw;
+}
 
+.nav-bottom ul a {
+  color: $white;
 }
 
 .nav-bottom ul {
@@ -38,7 +40,7 @@ footer {
 }
 
 #plus {
-  color: $plus;
+  color: $white;
   font-size: 2.5rem;
 }
 
@@ -52,19 +54,6 @@ a#user {
   margin-top: 0.5rem;
 }
 
-.button {
-  background-image: $dark-rainbow;
-  width: 70svw;
-  padding: 0.1rem;
-  border-radius: 0.8rem;
-  margin-left: 2rem;
-}
-
 .submit {
   color: $icons;
-}
-
-.simple-form {
-  padding: 0.4rem;
-  border-radius: 0.5rem;
 }

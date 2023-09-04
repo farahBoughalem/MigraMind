@@ -5,37 +5,52 @@
 }
 
 .my-events {
-  display: grid;
-  grid-column: auto 1fr auto;
-  max-width: 90svw;
-  max-height: 90svh;
   margin-top: 1rem;
-  gap: 1rem;
+
 
   h4 {
     font-weight: bold;
   }
+}
+
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1rem;
+}
+
+.my-events a {
+  text-decoration: none;
+  color: $black;
 }
 
 .user-floating-card {
   background-color: $white;
   margin: auto;
-  width: 90svw;
+  width: 70svw;
+  height: 15svh;
   padding: 0.5rem;
   border-radius: 1rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  flex: 0 0 auto;
 }
 
 .join-events {
-  display: grid;
-  grid-column: auto 1fr auto;
-  max-width: 90svw;
-  max-height: 90svh;
-  margin-top: 4rem;
-  gap: 1rem;
+  // display: grid;
+  // grid-column: auto 1fr auto;
+  // max-width: 90svw;
+  // max-height: 90svh;
+  // margin-top: 4rem;
+  // gap: 1rem;
 
   h4 {
     font-weight: bold;
   }
 
+}
+
+.join-events a {
+  text-decoration: none;
+  color: $black;
 }
