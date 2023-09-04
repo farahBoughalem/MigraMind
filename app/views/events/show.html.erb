@@ -34,8 +34,14 @@
     <%= link_to events_path do %>
       <button class="btn" id="button-style"><i class="fa-solid fa-circle-arrow-left"></i></button>
     <% end %>
+      <div id="edit_button">
+      <% if @event.user == current_user %>
+        <%= link_to edit_event_path(@event) do %>
+          <button class="btn" id="button-style"><i class="fa fa-pencil"></i></button></div>
+        <% end %>
+        <% end %>
+      </div>
   </div>
-</div>
 <div class="col-11 col-md-6 mx-auto mt-3 p-3">
   <p class="border-bottom fw-bold">DETAILS</p>
   <p><%= @event.description %></p>

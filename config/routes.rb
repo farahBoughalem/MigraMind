@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :events, only: %i[index show new create] do
+  resources :events, only: %i[index show new create edit update] do
     member do
       post 'join'
     end
