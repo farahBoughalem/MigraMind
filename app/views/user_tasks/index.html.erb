@@ -6,24 +6,28 @@
 
 <div class="container" id="user-task-container">
   <% @user_tasks.each do |user_task|  %>
-    <div  data-controller="olivas-accordion">
-      <div class="user_task_card my-3">
-                <%= simple_form_for [user_task.task, user_task] do |f| %>
-                  <% f.check_box :status, {checked: user_task.status == true, onchange: 'this.form.submit()', class: "checkbox-user-task" }, true, false %>
-                <% end %>
-                <h2><%= user_task.task.title %></h2>
-
-
-              <button style="background: transparent;border: none;" data-action="click->olivas-accordion#toggleAccordion">
-                  <h2 data-olivas-accordion-target="symbol">+</h2>
-              </button>
+    <div data-controller="olivas-accordion">
+      <div class="user_task_card border-rounded-ten" data-olivas-accordion-target="card">
+        <%= render "user_task_form", user_task: user_task %>
+        <h2><%= user_task.task.title %></h2>
+        <button style="background: transparent;border: none;" data-action="click->olivas-accordion#toggleAccordion">
+            <h2 data-olivas-accordion-target="symbol">+</h2>
+        </button>
       </div>
        <div data-olivas-accordion-target="content" class="d-none">
-            <p class="p-2"><%= user_task.task.content %></p>
+          <p class="p-2"><%= user_task.task.content %></p>
         </div>
     </div>
     <% end %>
   </div>
 
-
- <%# <div class="user_task_card my-3 p-2"> %>
+ <%# <%= simple_form_for [user_task.task, user_task],
+                html: {
+                  data: {
+                    controller: "checkbox",
+                    checkbox_target: "form",
+                    action: "submit->checkbox#toggleCheckbox"
+                  }
+                } do |f| %>
+                  <%# <% f.check_box :status, data: {checkbox_target: "input"}  %>
+                <%# <% end %>
