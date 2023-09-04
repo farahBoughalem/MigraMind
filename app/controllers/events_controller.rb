@@ -66,7 +66,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    redirect_to events_path, status: :see_other
+    redirect_to dashboard_index_path, status: :see_other
   end
 
   def join
