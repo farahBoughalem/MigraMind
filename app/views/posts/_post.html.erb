@@ -21,7 +21,9 @@
   <div class="interaction-icons">
     <a href="#" id="post-like-link" data-controller="like-button" data-like-button-post-id="<%= post.id %>" data-like-button-likable-type="post" data-action="click->like-button#like">
      <button class="btn btn-light">
-      <div data-like-button-target="container" class="blacky">
+     <%  %>
+     <% color = post.liked_by_current_user?(current_user) ? "greeny" : "blacky" %>
+      <div data-like-button-target="container" class="<%= color %>">
         <span data-like-button-target="sum"><%= post.likes.count %></span>
         <i class="fa-solid fa-heart"></i>
       </div>
