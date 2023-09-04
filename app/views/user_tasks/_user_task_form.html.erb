@@ -1,0 +1,5 @@
+<%= simple_form_for [user_task.task, user_task],
+      remote: true,
+      data: { controller: "checkbox", checkbox_target: "form"} do |f| %>
+  <% f.check_box :status, {checked: user_task.status == true, data: { action: "change->checkbox#submitForm" }, class: "checkbox-user-task" }, true, false %>
+<% end %>
