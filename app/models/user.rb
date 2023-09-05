@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_many :events
   has_many :posts
   has_many :comments
-  has_many :likes, as: :likable
+  has_many :likes, as: :likable, dependent: :destroy
   has_many :tasks, through: :user_tasks
   has_many :user_tasks
   has_many :attendees

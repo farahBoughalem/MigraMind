@@ -49,20 +49,27 @@
 
 <div class="d-flex flex-column justify-content-center mt-3" data-controller="toggle">
   <div class="d-flex justify-content-center">
-    <div class="border-bottom bold" data-toggle-target="detailsDiv">
+    <div class="border-bottom" data-toggle-target="detailsDiv">
       <button data-action="click->toggle#openDescription" class="btn btn-outline primary">DETAILS</button>
     </div>
 
     <div class="border-bottom" data-toggle-target="locationDiv">
       <button data-action="click->toggle#openLocation" class="btn btn-outline primary">LOCATION</button>
     </div>
+
+    <div class="border-bottom" data-toggle-target="attendeesDiv">
+      <button data-action="click->toggle#openAttendee" class="btn btn-outline primary">ATTENDEES</button>
+    </div>
   </div>
   <div class="w-100">
-    <div data-toggle-target="description" class="mx-3">
+    <div data-toggle-target="description" class="d-none mx-3">
       <p><%= @event.description %></p>
     </div>
      <div data-toggle-target="location" class="d-none">
       <%= render "map", events: @events %>
+    </div>
+    <div data-toggle-target="attendees" class="d-none d-flex justify-content-center mt-3">
+      <%= render "attendee", event: @event %>
     </div>
   </div>
 </div>
