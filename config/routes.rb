@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'dashboard/index'
   get 'user_tasks/controller'
   get 'dashboard', to: 'dashboard#index', as: 'user_dashboard'
+  get 'dashboard/:id', to: 'dashboard#show', as: 'dashboard'
   devise_for :users, controllers: { registrations: 'registrations' }
 
   root to: "landing#index"

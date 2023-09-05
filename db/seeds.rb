@@ -151,7 +151,7 @@ end
 puts "Creating Event"
 
 file1 = URI.open("https://mein.toubiz.de/api/v1/media/2458f350-2659-437c-ba90-a763f41ae4fd/preview?format=image/jpeg&width=900")
-event1 = Event.create(name: "Frankfurt Christmas Market", address: "Kaiserstraße 56
+event1 = Event.create(name: "Christmas Market", address: "Kaiserstraße 56
   60329 Frankfurt am Main", description: "With its sheer size and vast number of visitors,
 the Frankfurt Christmas Market is one of the most significant Christmas markets in Germany. Elaborate and creative stand
 decorations, the backdrops of the Römerberg and St Paul's Square and the huge Christmas tree combine to also make the

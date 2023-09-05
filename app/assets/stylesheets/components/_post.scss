@@ -21,6 +21,10 @@
   margin: 0;
   font-weight: bold;
   font-size: 1.2rem;
+  a{
+    text-decoration: none;
+    color: $black;
+  }
 }
 
 .category{
@@ -31,6 +35,10 @@
   margin: 0;
   color: $dark-gray;
   font-size: 0.8rem;
+  a{
+    text-decoration: none;
+    color: $dark-gray;
+  }
 }
 
 .interaction-icons, .comments{
