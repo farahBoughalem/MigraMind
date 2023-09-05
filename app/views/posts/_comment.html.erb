@@ -6,7 +6,9 @@
       </div>
     </div>
     <div>
-      <p class="small-grey-text"><%= comment.user.username %></p>
+      <p class="small-grey-text">
+        <%= link_to comment.user.username, dashboard_path(comment.user) %>
+      </p>
       <p><%= comment.content %></p>
     </div>
   </div>

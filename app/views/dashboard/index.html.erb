@@ -20,6 +20,15 @@
               <i class="fa-solid fa-location-dot"></i>
               <%= event.address %>
             </div>
+            <% color = (event.date - Date.today).to_i < 10 ? "#FD1015" : "#2568ce" %>
+            <div id="counter" style="color: <%= color%>">
+              <i class="fa-solid fa-bell"></i>
+              <% if (event.date - Date.today).to_i < 30 %>
+                <%= (event.date - Date.today).to_i %> days left
+              <% else %>
+                <%= (event.date - Date.today).to_i/30 %> months left
+              <% end %>
+            </div>
           </div>
         <% end %>
       <% end %>
@@ -41,14 +50,18 @@
               <i class="fa-solid fa-location-dot"></i>
               <%= event.address %>
             </div>
+            <% color = (event.date - Date.today).to_i < 10 ? "#FD1015" : "#2568ce" %>
+            <div id="counter" style="color: <%= color%>">
+              <i class="fa-solid fa-bell"></i>
+              <% if (event.date - Date.today).to_i < 30 %>
+                <%= (event.date - Date.today).to_i %> days left
+              <% else %>
+                <%= (event.date - Date.today).to_i/30 %> months left
+              <% end %>
+            </div>
           </div>
         <% end %>
       <% end %>
     </div>
   </div>
-</div>
-
-
-<div class="user-flag">
-  <%= flag_icon(current_user.country) %>
 </div>
