@@ -1,0 +1,18 @@
+<table>
+
+<% if event.attendees.empty? %>
+ <h3>There are no attendees for this event!</h3>
+ <% else %>
+  <% event.attendees.each do |attendee|  %>
+    <tr>
+      <td>
+        <ul>
+          <li>
+            <p> <%= attendee.user.username %> is attending this event!</p>
+          </li>
+        </ul>
+      </td>
+    <tr>
+  <% end %>
+  <% end %>
+</table>

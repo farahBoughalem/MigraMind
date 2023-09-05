@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.left_joins(:likes).group(:id).order('COUNT(likes.id) DESC')
+    @posts = Post.all
     @post = Post.new
     @comment = Comment.new
     @like = Like.new

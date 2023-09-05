@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
   geocoded_by :address
   belongs_to :user
-  has_many :attendees
+  has_many :attendees, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
   validates :address, presence: true
