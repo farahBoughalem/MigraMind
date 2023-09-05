@@ -15,9 +15,15 @@
         </button>
       </div>
        <div data-olivas-accordion-target="content" class="d-none">
-          <p class="p-2"><%= user_task.task.content %></p>
+          <div class="task-content">
+            <p class="p-4"><%= user_task.task.content.truncate(160) %></p>
+          </div>
+          <div class="task-content-link">
+            <% if !user_task.task.link.nil? %>
+              <%= link_to "More Details", user_task.task.link, target: "_blank" %>
+            <% end %>
+          </div>
         </div>
     </div>
     <% end %>
   </div>
-

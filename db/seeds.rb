@@ -13,52 +13,54 @@ puts "Creating 10 users😊"
 require "open-uri"
 
 file1 = URI.open("https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
-user1 = User.new(first_name: "Elizebeth", last_name: "Johnson", username: "emma_j", email: "emma.johnson@gmsil.com", password: "123456", country: "US")
+user1 = User.new(first_name: "Elizebeth", last_name: "Johnson", username: "emma_j", email: "emma.johnson@gmsil.com", password: "123456", country: "US", bio:
+  "Hello, I'm Emma, a twenty-something American who recently made the move to Germany to explore its culture, cuisine, and picturesque landscapes while documenting my adventures through photography and embracing this exciting new chapter. 🇩🇪📸🌍");
 user1.photo.attach(io: file1, filename: "user1", content_type: "image/jpeg")
 user1.save
 
 file2 = URI.open("https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFsZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80")
-user2 = User.new(first_name: "Liam", last_name: "Smith", username: "liam_s", email: "liam.smith@gmail.com", password: "123456", country: "BR")
+user2 = User.new(first_name: "Liam", last_name: "Smith", username: "liam_s", email: "liam.smith@gmail.com", password: "123456", country: "BR", bio: "Hey, I'm Liam, a Brazilian adventurer who's just taken the leap to start a new chapter in Germany, where I'm immersing myself in the rich culture, savoring schnitzels, and navigating the picturesque landscapes while embracing the thrill of this exciting international journey. 🇧🇷🇩🇪🌍")
 user2.photo.attach(io: file2, filename: "user2", content_type: "image/jpeg")
 user2.save
 
 file3 = URI.open("https://media.istockphoto.com/id/1317804578/photo/one-businesswoman-headshot-smiling-at-the-camera.jpg?s=612x612&w=0&k=20&c=EqR2Lffp4tkIYzpqYh8aYIPRr-gmZliRHRxcQC5yylY=")
-user3 = User.new(first_name: "Olivia", last_name: "Brown", username: "olivia_b", email: "olivia.brown@gmail.com", password: "123456", country: "CA")
+user3 = User.new(first_name: "Olivia", last_name: "Brown", username: "olivia_b", email: "olivia.brown@gmail.com", password: "123456", country: "CA", bio: "Hello, I'm Olivia, a Canadian explorer now calling Germany home, where I'm savoring the hearty cuisine, embracing the language, and creating unforgettable memories in the heart of Europe. 🇨🇦🇩🇪🌍")
 user3.photo.attach(io: file3, filename: "user3", content_type: "image/jpg")
 user3.save
 
 file4 = URI.open("https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWFsZSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80")
-user4 = User.new(first_name: "Noah", last_name: "Williams", username: "noah_w", email: "noah.williams@gmail.com", password: "123456", country: "AU")
+user4 = User.new(first_name: "Noah", last_name: "Williams", username: "noah_w", email: "noah.williams@gmail.com", password: "123456", country: "AU", bio: "G'day, I'm Noah, an Aussie adventurer who's swapped the beaches of Australia for the charming streets of Germany, where I'm learning the language, savoring the local brews, and embarking on a European odyssey. 🇦🇺🇩🇪🌍")
+
 user4.photo.attach(io: file4, filename: "user4", content_type: "image/jpeg")
 user4.save
 
 file5 = URI.open("https://media.istockphoto.com/id/1338134319/photo/portrait-of-young-indian-businesswoman-or-school-teacher-pose-indoors.jpg?s=612x612&w=0&k=20&c=Dw1nKFtnU_Bfm2I3OPQxBmSKe9NtSzux6bHqa9lVZ7A=")
-user5 = User.new(first_name: "Ava", last_name: "Jones", username: "ava_j", email: "ava.jones@gmail.com", password: "123456", country: "IN")
+user5 = User.new(first_name: "Ava", last_name: "Jones", username: "ava_j", email: "ava.jones@gmail.com", password: "123456", country: "IN", bio: "I'm Ava, a 30 year-old from India now calling Germany home, where I'm embracing the culture, sampling hearty sausages, and discovering the beauty of the Rhine Valley. 🇮🇳🇩🇪🌍")
 user5.photo.attach(io: file5, filename: "user5", content_type: "image/jpg")
 user5.save
 
 file6 = URI.open("https://media.istockphoto.com/id/1154642632/photo/close-up-portrait-of-brunette-woman.jpg?b=1&s=612x612&w=0&k=20&c=7hgSq1L2mpIbpuuw00KELApMpmZfBkZ-RBxn3Qps5zQ=")
-user6 = User.new(first_name: "Isabella", last_name: "Davis", username: "isabella_d",email: "isabella.davis@gmail.com", password: "123456", country: "DZ")
+user6 = User.new(first_name: "Isabella", last_name: "Davis", username: "isabella_d", email: "isabella.davis@gmail.com", password: "123456", country: "DZ", bio: "I'm Isabella, an 27 year-old Algerian woman who's ventured to Germany to immerse myself in the diverse culture, relish the delicious pastries, and embark on a European adventure. 🇩🇿🇩🇪🌍")
 user6.photo.attach(io: file6, filename: "user6", content_type: "image/jpg")
 user6.save
 
 file7 = URI.open("https://st4.depositphotos.com/1006137/19992/i/450/depositphotos_199923460-stock-photo-beautiful-brunette-woman-profile-picture.jpg")
-user7 = User.new(first_name: "Sophia", last_name: "Miller", username: "sophia_m", email: "sophia.miller@gmail.com", password: "123456", country: "US")
+user7 = User.new(first_name: "Sophia", last_name: "Miller", username: "sophia_m", email: "sophia.miller@gmail.com", password: "123456", country: "US", bio: "Hey there, I'm Sophia, a proud American now exploring Germany's enchanting cities, indulging in schnitzels, and creating my own transatlantic story.")
 user7.photo.attach(io: file7, filename: "user7", content_type: "image/jpg")
 user7.save
 
 file8 = URI.open("https://media.istockphoto.com/id/1300512215/photo/headshot-portrait-of-smiling-ethnic-businessman-in-office.jpg?s=612x612&w=0&k=20&c=QjebAlXBgee05B3rcLDAtOaMtmdLjtZ5Yg9IJoiy-VY=")
-user8 = User.create(first_name: "Jackson", last_name: "Wilson", username: "jackson_w", email: "jackson.wilson@gmail.com", password: "123456", country: "PL")
+user8 = User.create(first_name: "Jackson", last_name: "Wilson", username: "jackson_w", email: "jackson.wilson@gmail.com", password: "123456", country: "PL", bio: "I'm Jackson, a Polish adventurer who's made the leap to Germany, where I'm embracing the vibrant culture, savoring sauerkraut, and discovering the beauty of the Bavarian Alps.")
 user8.photo.attach(io: file8, filename: "user8", content_type: "image/jpg")
 user8.save
 
 file9 = URI.open("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVuJTIwcHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80")
-user9 = User.create(first_name: "Lucas", last_name: "Moore", username: "lucas_m", email: "lucas.moore@gmail.com", password: "123456", country: "AR")
+user9 = User.create(first_name: "Lucas", last_name: "Moore", username: "lucas_m", email: "lucas.moore@gmail.com", password: "123456", country: "AR", bio: "Hola, I'm Lucas, an Argentinian explorer now making Germany my home, where I'm immersing myself in the rich history, enjoying bratwurst, and falling in love with the picturesque landscapes.")
 user9.photo.attach(io: file9, filename: "user9", content_type: "image/jpeg")
 user9.save
 
 file10 = URI.open("https://media.istockphoto.com/id/1372281808/photo/woman-face-profile-young-girl-portrait-with-smooth-healthy-skin-model-facial-side-view-over.jpg?s=612x612&w=0&k=20&c=0sycwPGkFcwXL75kdHCy52c2jX7r9qJwPXqS4J3PZb8=")
-user10 = User.new(first_name: "Mia", last_name: "Taylor", username: "mia_t", email: "mia.taylor@gmail.com", password: "123456", country: "ES")
+user10 = User.new(first_name: "Mia", last_name: "Taylor", username: "mia_t", email: "mia.taylor@gmail.com", password: "123456", country: "ES", bio: "I'm Mia, a Spanish adventurer who's swapped the sunny shores of Spain for the charm of Germany, where I'm learning the language, savoring schnitzels, and embracing the European experience.")
 user10.photo.attach(io: file10, filename: "user10", content_type: "image/jpg")
 user10.save
 
@@ -113,32 +115,51 @@ puts "Creating Checklist"
 
 Task.create([
   { title: "Find temporary accommodation",
-    content: "If you haven't already secured long-term housing, find temporary accommodation like a hostel or Airbnb while you search for a more permanent place to live." },
+    content: "If you haven't already secured long-term housing, find temporary accommodation like a hostel or Wunderflats while you search for a more permanent place to live.",
+    link: "https://wunderflats.com/en?gclid=CjwKCAjwu_mSBhAYEiwA5BBmf1hv5FIiiM73-_S65sUeJKJiqTXtm3wMgiLK8xik-PKrCaxK1liQ0xoCZNYQAvD_BwE",
+  },
 
   { title: "Register your residence (Anmeldung)",
-    content: "To register your apartment in Germany, visit your local registration office with your passport or ID, a completed registration form, and a confirmation of residence from your landlord. Submit your documents, receive a registration certificate, and ensure you update your address with other relevant institutions. " },
+    content: "To register your apartment in Germany, visit your local registration office with your passport or ID, a completed registration form, and a confirmation of residence from your landlord. Submit your documents, receive a registration certificate, and ensure you update your address with other relevant institutions. ",
+    link: "https://www.iamexpat.de/expat-info/german-expat-news/anmeldung-16-tips-getting-address-registered-germany",
+  },
 
   { title: "Select your health insurance",
-    content: "To get health insurance in Germany, choose between public (statutory) or private insurance, submit an application with required documents, and pay monthly premiums. Health insurance is mandatory in Germany, and the process may vary based on your choice and circumstances." },
+    content: "To get health insurance in Germany, choose between public (statutory) or private insurance, submit an application with required documents, and pay monthly premiums. Health insurance is mandatory in Germany, and the process may vary based on your choice and circumstances.",
+    link: "https://www.make-it-in-germany.com/en/living-in-germany/money-insurance/health-insurance",
+  },
 
   { title: "Open a bank account",
-    content: "
-    To open a bank account in Germany, choose a bank, visit the branch, provide your identification (passport or ID, proof of address, and residence permit if needed), complete the required forms, deposit any initial funds if required, and you'll receive your account details upon approval." },
+    content: "To open a bank account in Germany, choose a bank, visit the branch, provide your identification (passport or ID, proof of address, and residence permit if needed), complete the required forms, deposit any initial funds if required, and you'll receive your account details upon approval.",
+    link: "https://n26.com/en-eu/blog/how-to-open-a-bank-account-in-germany",
+  },
 
   { title: "Apply for a Tax Identification Number",
-    content: "The Steueridentifikationsnummer is a number is crucial for taxation and other official processes. To get a tax identification number (TIN) in Germany, you should register at your local tax office (Finanzamt) by completing the relevant forms and providing your personal information, such as your name, address, and nationality. The tax office will then issue you a unique TIN, which is essential for various financial and administrative transactions in Germany." },
+    content: "The Steueridentifikationsnummer is a number is crucial for taxation and other official processes. To get a tax identification number (TIN) in Germany, you should register at your local tax office (Finanzamt) by completing the relevant forms and providing your personal information, such as your name, address, and nationality. The tax office will then issue you a unique TIN, which is essential for various financial and administrative transactions in Germany.",
+    link: "https://www.bzst.de/EN/Private_individuals/Tax_identification_number/tax_identification_number_node.html"
+  },
 
   { title: "Get a public transportation ticket",
-    content: "To get a public transportation ticket in Germany, visit a local transport company's ticket office or a ticket vending machine at a train station or bus stop. Select the type of ticket you need, such as a single journey, daily pass, or monthly subscription, and make the payment to receive your ticket, which is often valid for trains, trams, buses, and other forms of public transport in the chosen area." },
+    content: "To get a public transportation ticket in Germany, visit a local transport company's ticket office or a ticket vending machine at a train station or bus stop. Select the type of ticket you need, such as a single journey, daily pass, or monthly subscription, and make the payment to receive your ticket, which is often valid for trains, trams, buses, and other forms of public transport in the chosen area.",
+    link: "https://www.iamexpat.de/expat-info/transportation/public-transportation-germany-sbahn-ubahn-tram-bus"
+  },
 
   { title: "Apply for a residency permit (if applicable)",
-    content: "To obtain a residency permit in Germany, you typically need to apply at the local Foreigners' Registration Office (Ausländerbehörde) in your area. Prepare the required documents, including a valid passport, proof of sufficient financial means, and a lease agreement or confirmation of accommodation, and attend an appointment at the office to complete the application process." },
+    content: "To obtain a residency permit in Germany, you typically need to apply at the local Foreigners' Registration Office (Ausländerbehörde) in your area. Prepare the required documents, including a valid passport, proof of sufficient financial means, and a lease agreement or confirmation of accommodation, and attend an appointment at the office to complete the application process.",
+    link: "https://www.auswaertiges-amt.de/en/visa-service/buergerservice/faq/-/606848"
+  },
 
   { title: "Attend integration courses (if applicable)",
-    content: "To enroll in an integration course in Germany, you must visit your local Immigration Office (Ausländerbehörde) or Job Center (Arbeitsagentur) and express your interest in taking the course. If you meet the eligibility criteria, you'll be referred to a language school or course provider, where you can register and start the integration course, which typically includes language and orientation components to help newcomers integrate into German society." },
+    content: "To enroll in an integration course in Germany, you must visit your local Immigration Office (Ausländerbehörde) or Job Center (Arbeitsagentur) and express your interest in taking the course. If you meet the eligibility criteria, you'll be referred to a language school or course provider, where you can register and start the integration course, which typically includes language and orientation components to help newcomers integrate into German society.",
+    link: "https://www.bamf.de/EN/Themen/Integration/ZugewanderteTeilnehmende/Integrationskurse/integrationskurse-node.html"
+  },
 
-  { title: "Get a SIM card", content: "To get a SIM card in Germany, visit a mobile network provider's store or an authorized retailer, choose a suitable plan (prepaid or postpaid), and provide your identification (passport or ID). The provider will issue you a SIM card, which you can insert into your phone and activate to start using mobile services." }
+  { title: "Get a SIM card", content: "To get a SIM card in Germany, visit a mobile network provider's store or an authorized retailer, choose a suitable plan (prepaid or postpaid), and provide your identification (passport or ID). The provider will issue you a SIM card, which you can insert into your phone and activate to start using mobile services.",
+  link: "https://www.expatica.com/de/living/household/german-sim-card-244240/",
+  },
+
 ])
+
 
 puts "Creating User Tasks"
 
