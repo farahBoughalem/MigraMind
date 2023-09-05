@@ -112,31 +112,32 @@ post20 = Post.create(content: "Moin moin, fitness enthusiasts! How do you stay a
 puts "Creating Checklist"
 
 Task.create([
-  { title: "Find Temporary Accommodation",
+  { title: "Find temporary accommodation",
     content: "If you haven't already secured long-term housing, find temporary accommodation like a hostel or Airbnb while you search for a more permanent place to live." },
 
-  { title: "Register my residence (Anmeldung)",
-    content: "How do I register my residence (Anmeldung)?" },
+  { title: "Register your residence (Anmeldung)",
+    content: "To register your apartment in Germany, visit your local registration office with your passport or ID, a completed registration form, and a confirmation of residence from your landlord. Submit your documents, receive a registration certificate, and ensure you update your address with other relevant institutions. " },
 
-  { title: "Select a health insurance",
-    content: "What health insurance options are available for migrants?" },
+  { title: "Select your health insurance",
+    content: "To get health insurance in Germany, choose between public (statutory) or private insurance, submit an application with required documents, and pay monthly premiums. Health insurance is mandatory in Germany, and the process may vary based on your choice and circumstances." },
 
   { title: "Open a bank account",
-    content: "How do I open a bank account?" },
+    content: "
+    To open a bank account in Germany, choose a bank, visit the branch, provide your identification (passport or ID, proof of address, and residence permit if needed), complete the required forms, deposit any initial funds if required, and you'll receive your account details upon approval." },
 
   { title: "Apply for a Tax Identification Number",
-    content: "The Steueridentifikationsnummer is a number is crucial for taxation and other official processes." },
+    content: "The Steueridentifikationsnummer is a number is crucial for taxation and other official processes. To get a tax identification number (TIN) in Germany, you should register at your local tax office (Finanzamt) by completing the relevant forms and providing your personal information, such as your name, address, and nationality. The tax office will then issue you a unique TIN, which is essential for various financial and administrative transactions in Germany." },
 
-  { title: "Explore Public Transportation",
-    content: "Familiarize yourself with the local public transportation system. Obtain a transit pass if needed." },
+  { title: "Get a public transportation ticket",
+    content: "To get a public transportation ticket in Germany, visit a local transport company's ticket office or a ticket vending machine at a train station or bus stop. Select the type of ticket you need, such as a single journey, daily pass, or monthly subscription, and make the payment to receive your ticket, which is often valid for trains, trams, buses, and other forms of public transport in the chosen area." },
 
-  { title: "Apply for Residency Permit (if applicable)",
-    content: "If you are not an EU/EEA citizen, you may need to apply for a residency permit or visa. Research the specific requirements for your situation." },
+  { title: "Apply for a residency permit (if applicable)",
+    content: "To obtain a residency permit in Germany, you typically need to apply at the local Foreigners' Registration Office (Ausländerbehörde) in your area. Prepare the required documents, including a valid passport, proof of sufficient financial means, and a lease agreement or confirmation of accommodation, and attend an appointment at the office to complete the application process." },
 
-  { title: "Attend Integration Courses (if applicable)",
-    content: " Integration courses can help you learn the language, culture, and society of Germany. If you're required to attend, make sure to enroll." },
+  { title: "Attend integration courses (if applicable)",
+    content: "To enroll in an integration course in Germany, you must visit your local Immigration Office (Ausländerbehörde) or Job Center (Arbeitsagentur) and express your interest in taking the course. If you meet the eligibility criteria, you'll be referred to a language school or course provider, where you can register and start the integration course, which typically includes language and orientation components to help newcomers integrate into German society." },
 
-  { title: "Get a SIM Card", content: "Obtain a local SIM card for your phone to have access to communication and data services." }
+  { title: "Get a SIM card", content: "To get a SIM card in Germany, visit a mobile network provider's store or an authorized retailer, choose a suitable plan (prepaid or postpaid), and provide your identification (passport or ID). The provider will issue you a SIM card, which you can insert into your phone and activate to start using mobile services." }
 ])
 
 puts "Creating User Tasks"

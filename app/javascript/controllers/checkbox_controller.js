@@ -5,7 +5,12 @@ import Rails from "@rails/ujs"
 export default class extends Controller {
   static targets = ["form"]
 
-  submitForm() {
+  submitForm(event) {
+    if (event.target.checked) {
+      event.target.nextElementSibling.innerHTML = '<i class="fas fa-check-square"></i>'
+    } else {
+      event.target.nextElementSibling.innerHTML = '<i class="fas fa-square"></i>'
+    }
     Rails.fire(this.formTarget, 'submit')
   }
 }
