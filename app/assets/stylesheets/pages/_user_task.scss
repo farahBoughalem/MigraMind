@@ -26,12 +26,15 @@
   align-items: center;
   height: 44px;
   padding: 15px;
-  box-shadow:  1px 1px 1px black;
-  background-color: #03c8b3ba;
-    margin-bottom: 1.5rem;
+  box-shadow:  2px 2px 2px black;
+  background-color: white;
+  margin-bottom: 1.5rem;
+
+  h2 {
+  margin-left: 13px;
   }
 
-
+}
 .checkbox-user-task {
   margin-right: 20px;
 }
@@ -48,6 +51,7 @@
 .accordion:after {
   margin-right: auto;
   margin-bottom: 10px;
+  color: black;
   // border-bottom-left-radius: 0;
 }
 
