@@ -101,6 +101,14 @@ GEM
       aws_cf_signer
       rest-client (>= 2.0.0)
     concurrent-ruby (1.2.2)
+    countries (5.6.0)
+      unaccent (~> 0.3)
+    country_flags (0.1.4)
+      actionview (>= 3.1)
+      normalize_country (>= 0.1)
+      railties (>= 3.1)
+    country_select (8.0.2)
+      countries (~> 5.0)
     crass (1.0.6)
     date (3.3.3)
     debug (1.8.0)
@@ -123,6 +131,8 @@ GEM
     faker (3.2.1)
       i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
+    flag-icons-rails (3.4.6.1)
+      sass-rails
     font-awesome-sass (6.4.2)
       sassc (~> 2.0)
     geocoder (1.8.2)
@@ -174,6 +184,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
+    normalize_country (0.3.2)
     orm_adapter (0.5.0)
     pg (1.5.3)
     popper_js (2.11.8)
@@ -226,6 +237,8 @@ GEM
       netrc (~> 0.8)
     rexml (3.2.6)
     rubyzip (2.3.2)
+    sass-rails (6.0.0)
+      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -256,6 +269,7 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    unaccent (0.4.0)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.2)
@@ -288,10 +302,14 @@ DEPENDENCIES
   bootstrap (~> 5.2)
   capybara
   cloudinary
+  countries (~> 5.6)
+  country_flags
+  country_select (~> 8.0)
   debug
   devise
   dotenv-rails
   faker
+  flag-icons-rails
   font-awesome-sass (~> 6.1)
   geocoder
   importmap-rails
