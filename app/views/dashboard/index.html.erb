@@ -3,14 +3,19 @@
   <div class="my-events">
     <h4>My events</h4>
     <div class="scrolling-wrapper">
-        <% @my_events.each do |event| %>
-          <%= link_to event_path(event) do %>
-        <div class="user-floating-card">
-            <p class="event-title"><%= event.name %></p>
-            <div class="small-grey-text">
-              <i class="fa-solid fa-clock"></i>
-              <%= event.date %>
+      <% @my_events.each do |event| %>
+          <div class="user-floating-card">
+            <div id="delete">
+              <%= link_to event_path(event), data: { turbo_method: :delete, turbo_confirm: 'Delete event?' } do %>
+                <i class="fa-solid fa-xmark"></i>
+              <% end %>
             </div>
+            <%= link_to event_path(event) do %>
+              <div><p class="event-title"><%= event.name %></p></div>
+              <div class="small-grey-text">
+                <i class="fa-solid fa-clock"></i>
+                <%= event.date %>
+              </div>
             <div class="small-grey-text">
               <i class="fa-solid fa-location-dot"></i>
               <%= event.address %>
@@ -25,8 +30,8 @@
     <h4>Joined events</h4>
     <div class="scrolling-wrapper">
       <% @joined_events.each do |event| %>
-      <%= link_to event_path(event) do %>
-        <div class="user-floating-card">
+        <%= link_to event_path(event) do %>
+          <div class="user-floating-card">
             <p class="event-title"><%= event.name %></p>
             <div class="small-grey-text">
               <i class="fa-solid fa-clock"></i>
@@ -41,4 +46,9 @@
       <% end %>
     </div>
   </div>
+</div>
+
+
+<div class="user-flag">
+  <%= flag_icon(current_user.country) %>
 </div>

@@ -6,9 +6,14 @@
 // External libraries
 @import "bootstrap";
 @import "font-awesome";
+/*
+ *= require flag-icon
+ */
+ @import "flag-icon";
 
 // Your CSS partials
 @import "components/index";
 @import "components/navigation";
 @import "pages/index";
-@import "components/user_task_form"
+@import "components/user_task_form";
+

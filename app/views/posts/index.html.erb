@@ -1,7 +1,7 @@
 
   <div class="d-flex justify-content-center">
     <div class="col-11 my-3">
-      <%= form_with url: root_path, method: :get, class: "d-flex" do %>
+      <%= form_with url: posts_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
               params[:query],
               class: "form-control post-search-input",
@@ -26,6 +26,7 @@
         <% post.comments.each do |comment| %>
           <%= render 'comment', comment: comment, post: post %>
         <% end %>
+
       </div>
     </div>
   </div>
