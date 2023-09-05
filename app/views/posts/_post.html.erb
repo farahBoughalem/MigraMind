@@ -4,7 +4,16 @@
       <%= cl_image_tag post.user.photo.key, width: 50, height: 50, crop: :thumb, gravity: :face %>
     </div>
     <div class="d-flex flex-column">
+    <div class="d-flex" style="gap: 10%">
       <p class="username"><%= post.user.username %></p>
+      <div class="user-flag">
+      <div>
+       <%= flag_icon(post.user.country) %>
+      </div>
+      </div>
+    </div>
+
+
       <% time_in_hours = (Time.now - post.created_at)/3600 %>
       <% if time_in_hours < 1 %>
         <% time = "#{((Time.now - post.created_at)/60).round} min ago" %>

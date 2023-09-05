@@ -111,3 +111,9 @@
   background-color: $petroleum;
   color: $white;
 }
+
+.user-flag span{
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 4px;
+}
