@@ -26,4 +26,9 @@ Rails.application.routes.draw do
   end
 
   resources :user_tasks, only: :index
+
+  # for chat
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 end
