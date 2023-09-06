@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_05_130838) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_06_075448) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,6 +51,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_05_130838) do
     t.index ["user_id"], name: "index_attendees_on_user_id"
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.bigint "sender_id", null: false
+    t.bigint "receiver_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["receiver_id"], name: "index_chatrooms_on_receiver_id"
+    t.index ["sender_id"], name: "index_chatrooms_on_sender_id"
+  end
+
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id", null: false
@@ -82,6 +91,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_05_130838) do
     t.datetime "updated_at", null: false
     t.index ["likable_type", "likable_id"], name: "index_likes_on_likable"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "chatroom_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -132,10 +151,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_05_130838) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "attendees", "events"
   add_foreign_key "attendees", "users"
+  add_foreign_key "chatrooms", "users", column: "receiver_id"
+  add_foreign_key "chatrooms", "users", column: "sender_id"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "events", "users"
   add_foreign_key "likes", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "user_tasks", "tasks"
   add_foreign_key "user_tasks", "users"

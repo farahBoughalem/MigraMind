@@ -16,12 +16,14 @@
     </div>
   </div>
     <% time_in_hours = (Time.now - post.created_at)/3600 %>
-    <% if time_in_hours < 1 %>
-      <% time = "#{((Time.now - post.created_at)/60).round} min ago" %>
-    <% else %>
-      <% time = "#{time_in_hours.round} hours ago" %>
-    <% end %>
-    <p class="small-grey-text"><%= time %></p>
+      <% if time_in_hours < 1 %>
+        <% time = "#{((Time.now - post.created_at)/60).round} min ago" %>
+      <% elsif time_in_hours == 1 %>
+        <% time = "#{time_in_hours.round} hour ago" %>
+      <% else %>
+        <% time = "#{time_in_hours.round} hours ago" %>
+      <% end %>
+      <p class="small-grey-text"><%= time %></p>
   </div>
 </div>
 <p class="border-bottom category"><i class="fa-solid fa-tag"></i> <%= post.category %></p>

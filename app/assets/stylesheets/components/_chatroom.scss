@@ -1,0 +1,103 @@
+.chatroom {
+  background: white;
+  margin-top: 9px;
+  height: 84vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin: 0;
+
+  .messages {
+    height: 100%;
+    overflow: scroll;
+    padding: 1rem;
+  }
+
+  #new_message {
+    border-top: 1px solid $gray-200;
+    padding: 1rem;
+
+    .form-group {
+      margin-bottom: 0;
+    }
+  }
+}
+
+#chatting-friend{
+  display: flex;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid $gray-200;
+  column-gap: 1.2rem;
+  p {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+  }
+  img{
+    border-radius: 50%;
+    border: 0.1rem solid white;
+  }
+  a{
+    color: black;
+    text-decoration: none;
+  }
+  div{
+    display: flex;
+    column-gap: 0.7rem;
+  }
+  i{
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+  }
+}
+
+.message_content{
+  height: 1rem;
+  textarea{
+    height: 1rem;
+    width: 17.5rem;
+    border-radius: 1rem;
+  }
+}
+
+.chats-heading{
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.chat-friend{
+  list-style-type: none;
+  img{
+    border-radius: 50%;
+    border: 0.1rem solid white;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  #last-message{
+    color: $dark-gray;
+    font-size: 1rem;
+  }
+}
+
+.chat-wrapper{
+  display: flex;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+.chat-list{
+  margin: 0;
+  padding: 0;
+}
+
+#chat-history-container{
+  margin: 0 auto;
+}
+
+#friend-name{
+  font-size: 1.3rem;
+  font-weight: bold;
+}

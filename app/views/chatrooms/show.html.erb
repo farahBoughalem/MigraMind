@@ -1,0 +1,38 @@
+<div class="container chatroom"
+    data-controller="chatroom-subscription"
+    data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+  <% if current_user == @chatroom.sender %>
+    <% friend = @chatroom.receiver %>
+  <% else %>
+    <% friend = @chatroom.sender %>
+  <% end %>
+  <div id="chatting-friend">
+    <%= link_to chatrooms_path do %>
+      <i class="fa-solid fa-chevron-left"></i>
+    <% end %>
+    <div>
+      <div class="user-border">
+       <%= cl_image_tag friend.photo.key, width: 40, height: 40, crop: :thumb, gravity: :face %>
+      </div>
+      <p><%= friend.username %></p>
+    </div>
+  </div>
+
+  <div class="messages" data-chatroom-subscription-target="messages">
+    <% @chatroom.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+    <% end %>
+  </div>
+  <%= simple_form_for [@chatroom, @message],
+  html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
+  %>
+    <%= f.input :content,
+      label: false,
+      placeholder: "Message",
+      wrapper_html: {class: "flex-grow-1"}
+    %>
+    <%= button_tag( :class => "comment-button") do %>
+     <i class="fa-solid fa-paper-plane"></i>
+    <% end %>
+  <% end %>
+</div>
