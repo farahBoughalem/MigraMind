@@ -11,7 +11,21 @@ footer {
   bottom: 0;
   position: fixed;
   width: 100svw;
-}
+  }
+
+  .animation {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 800ms;
+  }
+
+  .animation > div {
+    overflow: hidden;
+  }
+
+  .clickfooter {
+    grid-template-rows: 1fr;
+  }
 
 .nav-bottom ul a {
   color: $white;

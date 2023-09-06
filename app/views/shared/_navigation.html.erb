@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <div data-controller="new-post">
-    <footer data-new-post-target="footer" class="animate__animated">
-      <div class="light-create">
+    <footer>
+      <div class="animation" data-new-post-target="footer">
         <% if  !@post.nil? %>
           <%= render "postform", post: @post %>
         <% elsif !@event.nil? && !@events.nil? %>
