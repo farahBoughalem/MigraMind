@@ -23,3 +23,9 @@
   <button id="button-style"><i class="fa-solid fa-circle-arrow-left"></i></button>
 <% end %>
 </div>
+
+<% unless @user == current_user %>
+  <%= link_to chat_dashboard_path(@user), data: { turbo_method: :post } do %>
+    <i class="fa-solid fa-comment-dots"></i>
+  <% end %>
+<% end %>

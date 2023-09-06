@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   # resouces :users, only: :show
-  get 'dashboard/index'
   get 'user_tasks/controller'
-  get 'dashboard', to: 'dashboard#index', as: 'user_dashboard'
-  get 'dashboard/:id', to: 'dashboard#show', as: 'dashboard'
+  resources :dashboard, only: %i[index show] do
+    member do
+      post 'chat'
+    end
+  end
   devise_for :users, controllers: { registrations: 'registrations' }
 
   root to: "landing#index"
@@ -26,4 +28,9 @@ Rails.application.routes.draw do
   end
 
   resources :user_tasks, only: :index
+
+  # for chat
+  resources :chatrooms, only: %i[index show] do
+    resources :messages, only: :create
+  end
 end

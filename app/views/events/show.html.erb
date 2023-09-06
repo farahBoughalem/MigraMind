@@ -37,7 +37,7 @@
 
   <div id="going-back">
     <%= link_to events_path do %>
-      <button class="btn" id="button-style"><i class="fa-solid fa-circle-arrow-left"></i></button>
+      <button class="btn" id="button-style"><i class="fa-solid fa-chevron-left"></i></button>
     <% end %>
     <div id="edit_button">
       <% if @event.user == current_user %>
@@ -47,7 +47,7 @@
       <% end %>
     </div>
   </div>
-  
+
 </div>
 
 <div class="d-flex flex-column justify-content-center mt-3" data-controller="toggle">
