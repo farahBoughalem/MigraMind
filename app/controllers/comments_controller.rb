@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     @comment.save
     respond_to do |format|
-      format.html { redirect_to root_path }
+      format.html { redirect_to posts_path }
       format.text { render partial: "posts/comment", locals: {comment: @comment}, formats: [:html] }
     end
   end

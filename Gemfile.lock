@@ -123,6 +123,8 @@ GEM
     faker (3.2.1)
       i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
+    flag-icons-rails (3.4.6.1)
+      sass-rails
     font-awesome-sass (6.4.2)
       sassc (~> 2.0)
     geocoder (1.8.2)
@@ -226,6 +228,8 @@ GEM
       netrc (~> 0.8)
     rexml (3.2.6)
     rubyzip (2.3.2)
+    sass-rails (6.0.0)
+      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -292,6 +296,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   faker
+  flag-icons-rails
   font-awesome-sass (~> 6.1)
   geocoder
   importmap-rails

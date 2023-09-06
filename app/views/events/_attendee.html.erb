@@ -1,0 +1,18 @@
+<% if event.attendees.empty? %>
+ <h3>There are no attendees for this event!</h3>
+ <% else %>
+ <div class="attendees-tab">
+  <ul>
+    <% event.attendees.each do |attendee|  %>
+      <li>
+        <div class="d-flex" style="gap: 1.5rem">
+          <div class="user-border attendee-img">
+          <%= cl_image_tag attendee.user.photo.key, width: 50, height: 50, crop: :thumb, gravity: :face %>
+          </div>
+          <p class="mt-2"><%= attendee.user.username %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+ </div>
+  <% end %>

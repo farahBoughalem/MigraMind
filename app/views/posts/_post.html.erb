@@ -4,7 +4,18 @@
       <%= cl_image_tag post.user.photo.key, width: 50, height: 50, crop: :thumb, gravity: :face %>
     </div>
     <div class="d-flex flex-column">
-      <p class="username"><%= post.user.username %></p>
+    <div class="d-flex" style="gap: 10%">
+      <p class="username">
+        <%= link_to post.user.username, dashboard_path(post.user) %>
+      </p>
+      <div class="user-flag">
+      <div>
+      <% if !post.user.country.nil? %>
+       <%= flag_icon(post.user.country) %>
+      <% end %>
+      </div>
+      </div>
+    </div>
       <% time_in_hours = (Time.now - post.created_at)/3600 %>
       <% if time_in_hours < 1 %>
         <% time = "#{((Time.now - post.created_at)/60).round} min ago" %>
@@ -21,7 +32,6 @@
   <div class="interaction-icons">
     <a href="#" id="post-like-link" data-controller="like-button" data-like-button-post-id="<%= post.id %>" data-like-button-likable-type="post" data-action="click->like-button#like">
      <button class="btn btn-light">
-     <%  %>
      <% color = post.liked_by_current_user?(current_user) ? "greeny" : "blacky" %>
       <div data-like-button-target="container" class="<%= color %>">
         <span data-like-button-target="sum"><%= post.likes.count %></span>

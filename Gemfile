@@ -81,3 +81,5 @@ gem "devise"
 gem "faker"
 gem "cloudinary"
 gem "geocoder"
+
+gem 'flag-icons-rails'

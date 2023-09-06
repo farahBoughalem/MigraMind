@@ -21,6 +21,10 @@
   margin: 0;
   font-weight: bold;
   font-size: 1.2rem;
+  a{
+    text-decoration: none;
+    color: $black;
+  }
 }
 
 .category{
@@ -31,6 +35,10 @@
   margin: 0;
   color: $dark-gray;
   font-size: 0.8rem;
+  a{
+    text-decoration: none;
+    color: $dark-gray;
+  }
 }
 
 .interaction-icons, .comments{
@@ -110,4 +118,10 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: $petroleum;
   color: $white;
+}
+
+.user-flag span{
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 4px;
 }
