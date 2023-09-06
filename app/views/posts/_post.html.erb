@@ -19,6 +19,8 @@
       <% time_in_hours = (Time.now - post.created_at)/3600 %>
       <% if time_in_hours < 1 %>
         <% time = "#{((Time.now - post.created_at)/60).round} min ago" %>
+      <% elsif time_in_hours == 1 %>
+        <% time = "#{time_in_hours.round} hour ago" %>
       <% else %>
         <% time = "#{time_in_hours.round} hours ago" %>
       <% end %>
