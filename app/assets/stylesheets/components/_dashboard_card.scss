@@ -1,12 +1,60 @@
 .dashboard-main {
-  margin-left: 1rem;
-  max-width: 95svw;
+  max-width: 100svw;
   max-height: 100svh;
   margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.square-wrapper {
+  border: 2px transparent;
+  border-radius: 0 4rem 4rem 0;
+  background-color: $petroleum;
+  position: relative;
+  right: 30px;
+  top: 0;
+  margin-top: 2rem;
+}
+
+.dashboard-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 15svh;
+  width: 100svw;
+  align-items: center;
+  margin: 0;
+}
+
+.user-name {
+  text-align: center;
+  h3 {
+    font-weight: bold;
+    color: $white;
+  }
+
+  h6 {
+    color: $dark-gray
+  }
+}
+
+.user-image {
+  display: flex;
+  padding: 4px;
+  justify-content: center;
+  margin: 2rem -8rem;
+  background-image: $rainbow;
+  width: 110px;
+
+  border-radius: 50%;
+
+  img {
+    border-radius: 50%;
+    border: 3px solid $white;
+  }
 }
 
 .my-events {
-  margin-top: 4rem;
+  margin-top: 1rem;
 
   h4 {
     font-weight: bold;
@@ -43,7 +91,6 @@
 }
 
 .join-events {
-  margin-top: 2rem;
 
   h4 {
     font-weight: bold;
