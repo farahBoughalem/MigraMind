@@ -9,19 +9,25 @@ export default class extends Controller {
   }
 
 
-  toggleAccordion(){
-    if(this.symbolTarget.innerText === "+"){
-      this.symbolTarget.innerText  = "-"
-      this.contentTarget.classList.remove("d-none")
-      this.contentTarget.classList.add("active-user-task_card")
-      this.cardTarget.classList.remove("border-rounded-ten")
-      this.cardTarget.classList.add("top-border-rounded-ten")
+  toggleAccordion(event){
+    const button = event.currentTarget
+    const symbol = event.currentTarget.closest("[data-olivas-accordion-target='symbol']")
+    const card = button.closest("[data-olivas-accordion-target='card']");
+    const content = card.nextElementSibling;
+
+    console.log(symbol)
+    if(symbol.innerText === "+"){
+      symbol.innerText  = "-"
+      card.classList.remove("border-rounded-ten")
+      card.classList.add("top-border-rounded-ten")
+      content.classList.remove("d-none")
+      content.classList.add("active-user-task_card")
 
     } else {
-      this.symbolTarget.innerText  = "+"
-      this.contentTarget.classList.add("d-none")
-      this.cardTarget.classList.add("border-rounded-ten")
-      this.cardTarget.classList.remove("top-border-rounded-ten")
+      symbol.innerText  = "+"
+      card.classList.add("border-rounded-ten")
+      card.classList.remove("top-border-rounded-ten")
+      content.classList.add("d-none")
     }
   }
 }
