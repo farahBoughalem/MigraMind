@@ -89,3 +89,29 @@
   font-weight: bold;
 }
 
+.attendees-tab{
+  width: 60svw;
+  li{
+    list-style-type: none;
+  }
+
+  .attendee-img{
+    display: inline-block;
+  }
+
+  img{
+    border-radius: 50%;
+    border: 0.15rem solid white;
+  }
+
+  ul{
+    margin: 0;
+    padding: 0;
+  }
+
+  p{
+    margin: 0;
+    font-size: 1.3rem;
+  }
+
+}
