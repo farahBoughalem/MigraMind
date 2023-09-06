@@ -1,13 +1,12 @@
 puts "Deleting previous records"
 
-
 Post.destroy_all
 Event.destroy_all
 UserTask.destroy_all
 Task.destroy_all
 User.destroy_all
 Comment.destroy_all
-
+Like.destroy_all
 
 puts "Creating 10 users😊"
 require "open-uri"
