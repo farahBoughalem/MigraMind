@@ -10,6 +10,11 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :username, presence: true, uniqueness: true
+
+  # for chat
+  has_many :chatrooms_as_sender, class_name: "Chatroom", foreign_key: :sender_id
+  has_many :chatrooms_as_receiver, class_name: "Chatroom", foreign_key: :receiver_id
+
   has_one_attached :photo
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

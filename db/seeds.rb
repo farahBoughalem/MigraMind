@@ -1,19 +1,18 @@
 puts "Deleting previous records"
 
-
 Post.destroy_all
 Event.destroy_all
 UserTask.destroy_all
 Task.destroy_all
 User.destroy_all
 Comment.destroy_all
-
+Like.destroy_all
 
 puts "Creating 10 users😊"
 require "open-uri"
 
 file1 = URI.open("https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
-user1 = User.new(first_name: "Elizebeth", last_name: "Johnson", username: "emma_j", email: "emma.johnson@gmsil.com", password: "123456", country: "US", bio:
+user1 = User.new(first_name: "Emma", last_name: "Johnson", username: "emma_j", email: "emma.johnson@gmail.com", password: "123456", country: "US", bio:
   "Hello, I'm Emma, a twenty-something American who recently made the move to Germany to explore its culture, cuisine, and picturesque landscapes while documenting my adventures through photography and embracing this exciting new chapter. 🇩🇪📸🌍");
 user1.photo.attach(io: file1, filename: "user1", content_type: "image/jpeg")
 user1.save
