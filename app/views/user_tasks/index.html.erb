@@ -4,9 +4,9 @@
   </div>
  </div>
 
-<div class="container" id="user-task-container">
+<div class="container" id="user-task-container" data-controller="olivas-accordion checkbox-slidedown" data-checkbox-slidedown-target="parentDiv">
   <% @user_tasks.each do |user_task|  %>
-    <div data-controller="olivas-accordion">
+    <div class="childDiv" data-checkbox-slidedown-target="cardContainer">
       <div class="user_task_card border-rounded-ten" data-olivas-accordion-target="card">
         <%= render "user_task_form", user_task: user_task %>
         <h2><%= user_task.task.title %></h2>
@@ -20,7 +20,7 @@
           </div>
           <div class="task-content-link">
             <% if !user_task.task.link.nil? %>
-              <%= link_to "More Details", user_task.task.link, target: "_blank" %>
+              <%= link_to "More details", user_task.task.link, target: "_blank" %>
             <% end %>
           </div>
         </div>
