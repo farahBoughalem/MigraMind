@@ -1,8 +1,10 @@
-<div class="square-wrapper">
+<div class="square-wrapper animate__animated animate__fadeInLeft">
   <div class="dashboard-profile">
     <div class="user-name">
       <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
       <h6>@<%= current_user.username %></h6>
+      <i id="button-style" class="fa-solid fa-comment-dots"></i>
+      <%= link_to "Chats", chatrooms_path %>
     </div>
     <div class="sticky-image">
       <div class="user-image">
@@ -78,5 +80,3 @@
     </div>
   </div>
 </div>
-
-<%= link_to "Chats", chatrooms_path %>

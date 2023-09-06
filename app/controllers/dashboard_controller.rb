@@ -8,7 +8,7 @@ class DashboardController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @new_user = User.find(params[:id])
   end
 
   def chat
