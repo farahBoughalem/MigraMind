@@ -1,11 +1,15 @@
-
+<div data-controller="search-post">
   <div class="d-flex justify-content-center">
     <div class="col-11 my-3">
-      <%= form_with url: posts_path, method: :get, class: "d-flex" do %>
+      <%= form_with url: posts_path, method: :get, html: {class: "d-flex", data: {search_post_target: "form"}} do %>
         <%= text_field_tag :query,
               params[:query],
               class: "form-control post-search-input",
-              placeholder: "Type a keyword"
+              placeholder: "Type a keyword",
+              data: {
+                search_post_target: "input",
+                action: "keyup->search-post#update"
+                }
           %>
         <%= button_tag(type: "submit", class: "btn post-search-button", id: "button-style") do %>
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -14,20 +18,6 @@
     </div>
   </div>
 
-<% @posts.each do |post| %>
-  <div class="card col-11 col-md-6" id="post" data-controller="show-comments">
-    <div class="card-body">
-      <%= render 'post', post: post %>
+  <%= render "posts", posts: @posts, comments: @comments  %>
 
-      <div class="comments d-none" data-show-comments-target="comments">
-
-        <%= render 'commentform', post: post, comment: @comment %>
-
-        <% post.comments.each do |comment| %>
-          <%= render 'comment', comment: comment, post: post %>
-        <% end %>
-
-      </div>
-    </div>
-  </div>
-<% end %>
+</div>

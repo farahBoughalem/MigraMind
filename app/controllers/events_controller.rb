@@ -8,8 +8,11 @@ class EventsController < ApplicationController
     if params[:query].present?
       sql_query = <<~SQL
         events.name @@ :query
+        OR events.name ILIKE :query
         OR events.description @@ :query
+        OR events.description ILIKE :query
         OR events.address @@ :query
+        OR events.address ILIKE :query
       SQL
       @events = @events.where(sql_query, query: "%#{params[:query]}%").distinct
     end
@@ -18,10 +21,16 @@ class EventsController < ApplicationController
       {
         lat: event.latitude,
         lng: event.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: { event: event }),
-        marker_html: render_to_string(partial: "marker")
+        info_window_html: render_to_string(partial: "info_window", formats: :html, locals: { event: event }),
+        marker_html: render_to_string(partial: "marker", formats: :html)
       }
     end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "events/events", locals: { events: @events, markers: @markers }, formats: [:html] }
+    end
+
   end
 
   def new

@@ -8,10 +8,18 @@ class PostsController < ApplicationController
     if params[:query].present?
       sql_query = <<~SQL
         posts.category @@ :query
+        OR posts.category ILIKE :query
         OR posts.content @@ :query
+        OR posts.content ILIKE :query
         OR comments.content @@ :query
+        OR comments.content ILIKE :query
       SQL
       @posts = @posts.left_outer_joins(:comments).where(sql_query, query: "%#{params[:query]}%").distinct
+    end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "posts/posts", locals: { posts: @posts }, formats: [:html] }
     end
   end
 
