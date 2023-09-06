@@ -1,6 +1,6 @@
 <div class="container m-auto" id="user_container1">
   <div class="container" id="user_header_container">
-  <h5 class="p-2">Your Arrival in Germany Checklist</h5>
+    <h5 class="p-2">Your Arrival in Germany Checklist</h5>
   </div>
  </div>
 
@@ -10,11 +10,11 @@
       <div class="user_task_card border-rounded-ten" data-olivas-accordion-target="card">
         <%= render "user_task_form", user_task: user_task %>
         <h2><%= user_task.task.title %></h2>
-        <button style="background: transparent;border: none;" data-action="click->olivas-accordion#toggleAccordion">
-            <h2 data-olivas-accordion-target="symbol">+</h2>
+        <button style="background: transparent;border: none;">
+            <h2 data-action="click->olivas-accordion#toggleAccordion" data-olivas-accordion-target="symbol">+</h2>
         </button>
       </div>
-       <div data-olivas-accordion-target="content" class="d-none">
+        <div data-olivas-accordion-target="content" class="d-none">
           <div class="task-content">
             <p class="p-4"><%= user_task.task.content.truncate(160) %></p>
           </div>
@@ -24,6 +24,6 @@
             <% end %>
           </div>
         </div>
-    </div>
+      </div>
     <% end %>
   </div>
