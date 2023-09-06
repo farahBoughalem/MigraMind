@@ -2,10 +2,21 @@
     data-controller="chatroom-subscription"
     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
   <% if current_user == @chatroom.sender %>
-    <h1>@<%= @chatroom.receiver.username %></h1>
+    <% friend = @chatroom.receiver %>
   <% else %>
-    <h1>@<%= @chatroom.sender.username %></h1>
+    <% friend = @chatroom.sender %>
   <% end %>
+  <div id="chatting-friend">
+    <%= link_to chatrooms_path do %>
+      <i class="fa-solid fa-chevron-left"></i>
+    <% end %>
+    <div>
+      <div class="user-border">
+       <%= cl_image_tag friend.photo.key, width: 40, height: 40, crop: :thumb, gravity: :face %>
+      </div>
+      <p>@<%= friend.username %></p>
+    </div>
+  </div>
 
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
@@ -20,6 +31,8 @@
       placeholder: "Message",
       wrapper_html: {class: "flex-grow-1"}
     %>
-    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+    <%= button_tag( :class => "comment-button") do %>
+     <i class="fa-solid fa-paper-plane"></i>
+    <% end %>
   <% end %>
 </div>

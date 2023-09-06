@@ -7,6 +7,7 @@ Task.destroy_all
 User.destroy_all
 Comment.destroy_all
 Like.destroy_all
+Chatroom.destroy_all
 
 puts "Creating 10 users😊"
 require "open-uri"
