@@ -1,0 +1,18 @@
+<h1 class="chats-heading">Chats</h1>
+<ul>
+  <% @chatrooms.each do |chatroom| %>
+    <% if current_user == chatroom.sender %>
+      <% friend = chatroom.receiver %>
+    <% else %>
+      <% friend = chatroom.sender %>
+    <% end %>
+    <li class="chat-friend">
+      <div>
+        <div class="user-border">
+          <%= cl_image_tag friend.photo.key, width: 50, height: 50, crop: :thumb, gravity: :face %>
+        </div>
+        <%= link_to friend.username, chatroom_path(chatroom) %>
+      </div>
+    </li>
+  <% end %>
+</ul>
