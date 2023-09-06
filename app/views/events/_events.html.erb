@@ -1,0 +1,6 @@
+<div data-search-event-target="list">
+  <% @events.each do |event| %>
+    <%= render "card", event: event %>
+  <% end %>
+  <%= render "map", events: events, markers: markers %>
+</div>
