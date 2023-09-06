@@ -11,9 +11,10 @@ export default class extends Controller {
     const type = event.currentTarget.dataset.newPostType
     if (type === "post") {
       this.addPostTarget.classList.toggle("d-none");
-      this.footerTarget.classList.add("animate__fadeInUp");
+      this.footerTarget.classList.toggle("clickfooter");
     } else {
       this.addEventTarget.classList.toggle("d-none");
+      this.footerTarget.classList.toggle("clickfooter");
     }
 
   };

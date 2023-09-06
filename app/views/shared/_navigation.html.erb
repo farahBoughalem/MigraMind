@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <div data-controller="new-post">
-    <footer data-new-post-target="footer" class="animate__animated">
-      <div class="light-create">
+    <footer>
+      <div class="animation" data-new-post-target="footer">
         <% if  !@post.nil? %>
           <%= render "postform", post: @post %>
         <% elsif !@event.nil? && !@events.nil? %>
@@ -21,14 +21,12 @@
             <% end %>
           </li>
           <li>
-            <% if @user_tasks.nil? %>
-              <% if @my_events.nil? %>
-                <% type = @post.nil? ? "event" : "post" %>
-                <div class="icons" id="plus" data-action="click->new-post#reveal"
-                data-new-post-type = "<%= type %>">
-                <i class="fa-solid fa-circle-plus"></i></div>
-                <% end %>
-            <% end %>
+            <% unless @like.nil? && @events.nil? %>
+              <% type = @post.nil? ? "event" : "post" %>
+              <div class="icons" id="plus" data-action="click->new-post#reveal"
+              data-new-post-type = "<%= type %>">
+              <i class="fa-solid fa-circle-plus"></i></div>
+              <% end %>
           </li>
           <li class="icons">
             <%= link_to user_tasks_path do %>

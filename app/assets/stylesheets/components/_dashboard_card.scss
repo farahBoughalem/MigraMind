@@ -16,9 +16,8 @@
 }
 
 .dashboard-profile {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   height: 15svh;
   width: 100svw;
   align-items: center;
@@ -27,29 +26,42 @@
 
 .user-name {
   text-align: center;
+  position: relative;
+  left: 45px;
   h3 {
     font-weight: bold;
     color: $white;
   }
 
   h6 {
-    color: $dark-gray
+    color: $dark-gray;
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
   }
 }
 
-.user-image {
-  display: flex;
-  padding: 4px;
-  justify-content: center;
-  margin: 2rem -8rem;
-  background-image: $rainbow;
-  width: 110px;
+.sticky-image {
+  position: relative;
+  left: 80px;
+  max-width: 100px;
 
-  border-radius: 50%;
+  .user-image {
+    display: flex;
+    padding: 4px;
+    justify-content: center;
+    position: sticky;
+    background-image: $rainbow;
+    width: 110px;
 
-  img {
     border-radius: 50%;
-    border: 3px solid $white;
+
+    img {
+      border-radius: 50%;
+      border: 3px solid $white;
+    }
   }
 }
 
