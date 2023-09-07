@@ -114,6 +114,10 @@ post20 = Post.create(content: "Moin moin, fitness enthusiasts! How do you stay a
 puts "Creating Checklist"
 
 Task.create([
+  { title: "Get a SIM card", content: "To get a SIM card in Germany, visit a mobile network provider's store or an authorized retailer, choose a suitable plan (prepaid or postpaid), and provide your identification (passport or ID). The provider will issue you a SIM card, which you can insert into your phone and activate to start using mobile services.",
+  link: "https://www.expatica.com/de/living/household/german-sim-card-244240/",
+  },
+
   { title: "Find temporary accommodation",
     content: "If you haven't already secured long-term housing, find temporary accommodation like a hostel or Wunderflats while you search for a more permanent place to live.",
     link: "https://wunderflats.com/en?gclid=CjwKCAjwu_mSBhAYEiwA5BBmf1hv5FIiiM73-_S65sUeJKJiqTXtm3wMgiLK8xik-PKrCaxK1liQ0xoCZNYQAvD_BwE",
@@ -152,14 +156,9 @@ Task.create([
   { title: "Attend integration courses (if applicable)",
     content: "To enroll in an integration course in Germany, you must visit your local Immigration Office (Ausländerbehörde) or Job Center (Arbeitsagentur) and express your interest in taking the course. If you meet the eligibility criteria, you'll be referred to a language school or course provider, where you can register and start the integration course, which typically includes language and orientation components to help newcomers integrate into German society.",
     link: "https://www.bamf.de/EN/Themen/Integration/ZugewanderteTeilnehmende/Integrationskurse/integrationskurse-node.html"
-  },
-
-  { title: "Get a SIM card", content: "To get a SIM card in Germany, visit a mobile network provider's store or an authorized retailer, choose a suitable plan (prepaid or postpaid), and provide your identification (passport or ID). The provider will issue you a SIM card, which you can insert into your phone and activate to start using mobile services.",
-  link: "https://www.expatica.com/de/living/household/german-sim-card-244240/",
-  },
+  }
 
 ])
-
 
 puts "Creating User Tasks"
 
