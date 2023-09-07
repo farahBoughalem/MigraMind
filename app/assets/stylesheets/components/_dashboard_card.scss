@@ -46,8 +46,8 @@
 }
 
 .sticky-image {
-  position: relative;
-  left: 50px;
+  position: fixed;
+  left: 270px;
   max-width: 100px;
 
   .user-image {
