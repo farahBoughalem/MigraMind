@@ -245,7 +245,7 @@ puts "Creating comments 📖"
 Comment.create(post_id: post1.id, user_id: user5.id, content: "Welcome to Germany! Register with a local doctor (Hausarzt) and your insurance should cover most.")
 Comment.create(post_id: post2.id, user_id: user7.id, content: "Hi there! Duolingo and Babbel have been game-changers for me.😉")
 Comment.create(post_id: post2.id, user_id: user3.id, content: "I've had success with Memrise and taking local VHS courses. Viel Erfolg!")
-Comment.create(post_id: post3.id, user_id: user9.id, content: "Hi there! Prenzlauer Berg has a great vibe for migrants like me.🌆")
+Comment.create(post_id: post3.id, user_id: user4.id, content: "Hi there! P Berg has a great vibe for migrants like me.🌆")
 Comment.create(post_id: post4.id, user_id: user1.id, content: "Networking helped me a lot! Attending meetups and LinkedIn connections. 🌐")
 Comment.create(post_id: post4.id, user_id: user3.id, content: "Language skills matter. After improving my German, job prospects expanded")
 Comment.create(post_id: post5.id, user_id: user2.id, content: "Absolutely! Let's embrace the diversity and connect through culture. 🌍")
