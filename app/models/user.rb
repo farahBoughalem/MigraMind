@@ -12,10 +12,9 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
 
   # for chat
-  has_many :chatrooms_as_sender, class_name: "Chatroom", foreign_key: :sender_id
-  has_many :chatrooms_as_receiver, class_name: "Chatroom", foreign_key: :receiver_id
+  has_many :chatrooms_as_sender, class_name: "Chatroom", foreign_key: :sender_id, dependent: :destroy
+  has_many :chatrooms_as_receiver, class_name: "Chatroom", foreign_key: :receiver_id, dependent: :destroy
   has_many :messages, dependent: :destroy
-  has_many :chatrooms, dependent: :destroy
 
   has_one_attached :photo
   # Include default devise modules. Others available are:
