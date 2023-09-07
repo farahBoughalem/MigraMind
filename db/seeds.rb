@@ -70,11 +70,11 @@ puts "Done too little too late 😈"
 
 puts "Creating posts ✏"
 
-post1 = Post.create(content: "Hey everyone! I recently moved to Germany and I'm a bit confused about how the healthcare system works here. Any tips or experiences you can share about accessing medical services as a migrant?", category: "Healthcare", user_id: user1.id )
+post1 = Post.create(content: "Hey everyone! I recently moved to Germany and I'm a bit confused about how the healthcare system works here. Any tips or experiences you can share about accessing medical services as a migrant?", category: "Healthcare", user_id: user8.id )
 
 post2 = Post.create(content: "Guten Tag! Let's share our favorite language learning apps, websites, and classes that have helped us improve our language skills.", category: "Language", user_id: user2.id )
 
-post3 = Post.create(content: "Hallo zusammen! If you're a migrant living in Berlin, which neighborhoods do you find most welcoming and accommodating? Let's discuss the best places to settle in the city.", category: "Housing", user_id: user3.id)
+post3 = Post.create(content: "Hallo zusammen! If you're a migrant living in Berlin, which neighborhoods do you find most welcoming and accommodating? Let's discuss the best places to settle in the city.", category: "Housing", user_id: user9.id)
 
 post4 = Post.create(content: "Hello everyone! Finding a job in a new country can be tough. Let's share job search strategies, interview experiences, and advice on how to build a successful career in Germany.", category: "Work and Employment", user_id: user4.id)
 
@@ -202,7 +202,7 @@ event4.photo.attach(io: file4, filename: "event4", content_type: "image/jpg")
 event4.save
 
 file5 = URI.open("https://www.visitberlin.de/system/files/styles/visitberlin_content_image_medium_visitberlin_xl_2x/private/image/GettyImages-Halloween%20Clique_DL_PPT_1.jpg.webp?itok=gUnHK3Mv")
-event5 = Event.create(name: "Halloween Party Ritter Butzke", address: "Ritterstraße 24-27, 10969 Berlin", description: "Join us for a bewitching night of thrills and chills at our Halloween club night! Expect wicked cocktails, spine-tingling tunes, and costume contests that’ll leave you howling with delight.",
+event5 = Event.create(name: "Halloween Party", address: "Ritterstraße 24-27, 10969 Berlin", description: "Join us for a bewitching night of thrills and chills at our Halloween club night! Expect wicked cocktails, spine-tingling tunes, and costume contests that’ll leave you howling with delight.",
 date: "31 October 2023", user_id: user5.id)
 event5.photo.attach(io: file5, filename: "event5", content_type: "image/jpg")
 event5.save
