@@ -180,10 +180,10 @@ Frankfurt Christmas Market one of the most beautiful in all the land.", date: "2
 event1.photo.attach(io: file1, filename: "event1", content_type: "image/jpeg")
 event1.save
 
-file2 = URI.open("https://www.sinnesfreunde.de/wp-content/uploads/Sinnesfreunde-projekte-messe-ifa-05.jpg")
-event2 = Event.create(name: "IFA Berlin 2023", address: "Messe Berlin, Berlin", description: "As the top trade fair for consumer and home electronics, IFA Berlin draws industry leaders, media, buyers, and dealers from Europe and beyond.
-Its international scope and product showcases make it a must-attend event.",
-date: "8 September 2023", user_id: user2.id)
+file2 = URI.open("https://www.mybucketlistevents.com/wp-content/uploads/2017/10/31131135628_071b52d972_k-1024x768.jpg")
+event2 = Event.create(name: "Oktoberfest", address: "Theresienwiese, 80336 München", description: "Oktoberfest is the most famous of all traditional German festivals. During the two weeks of Oktoberfest each fall, the entire city dons dirndl and lederhosen and huge crowds join in on the drinking, eating, and merriment on the Wies’n.
+More than just drinking (though it obviously takes center stage), the festival grounds are decked out with rides, games, shops, and food stands.",
+date: "16 September - 3 October 2023", user_id: user2.id)
 event2.photo.attach(io: file2, filename: "event2", content_type: "image/jpg")
 event2.save
 
@@ -194,17 +194,17 @@ date: "07 - 11 October 2023", user_id: user3.id)
 event3.photo.attach(io: file3, filename: "event3", content_type: "image/jpg")
 event3.save
 
-file4 = URI.open("https://www.textilwirtschaft.de/news/media/23/Shoes-Dsseldorf-225441.jpeg")
-event4 = Event.create(name: "Shoes Dusseldorf 2023", address: "Böhlerstraße 1, 40667 Meerbusch Düsseldorf", description: "Shoes Dusseldorf provides a diverse brand portfolio with collection-specific segmentation. It is a meeting place for the industry to network, order and conduct business in a protected setting.
-The event also features inspiring side events and international shoe trends.",
-date: "27 - 29 December 2023", user_id: user4.id)
-event4.photo.attach(io: file4, filename: "event4", content_type: "image/jpeg")
+file4 = URI.open("https://www.mybucketlistevents.com/wp-content/uploads/2017/10/1023457940-reeperbahn-in-hamburg-v084kqcuZoL2GhN9NG.jpg")
+event4 = Event.create(name: "Reeperbahn Festival", address: "Spielbudenpl. 27, 20359 Hamburg", description: "Europe’s largest club festival and the German equivalent of SXSW, Reeperbahn is a music festival spread out the beautiful northern port city of Hamburg.
+Instead of being held in one dedicated location, the majority of bars, clubs, and music venues throughout the city host upwards of 800 concerts over the course of four days in September. Reeperbahn is where music labels’ newest darlings make their debuts and the next stars are discovered.
+Label scouts, indie hopefuls, and underground music fans turn out by the tens of thousands.",
+date: "18 September 2023", user_id: user4.id)
+event4.photo.attach(io: file4, filename: "event4", content_type: "image/jpg")
 event4.save
 
-file5 = URI.open("https://autovista24.autovistagroup.com/wp-content/uploads/sites/5/2021/09/IAA-MOBILITY-2021-Impressionen-Messehalle-0656-1024x682.jpg")
-event5 = Event.create(name: "IAA Mobility 2023", address: "am messeturm 4, 81829 munich", description: "The world's largest and most important mobility event offers manufacturers, suppliers, tech companies,
-service providers and startups a wide range of opportunities to present themselves and their services to a broad international B2B and B2C audience.",
-date: "05 - 10 Sep 2023", user_id: user5.id)
+file5 = URI.open("https://www.visitberlin.de/system/files/styles/visitberlin_content_image_medium_visitberlin_xl_2x/private/image/GettyImages-Halloween%20Clique_DL_PPT_1.jpg.webp?itok=gUnHK3Mv")
+event5 = Event.create(name: "Halloween Party Ritter Butzke", address: "Ritterstraße 24-27, 10969 Berlin", description: "Join us for a bewitching night of thrills and chills at our Halloween club night! Expect wicked cocktails, spine-tingling tunes, and costume contests that’ll leave you howling with delight.",
+date: "31 October 2023", user_id: user5.id)
 event5.photo.attach(io: file5, filename: "event5", content_type: "image/jpg")
 event5.save
 
@@ -215,12 +215,10 @@ date: "22 - 24 September 2023", user_id: user6.id)
 event6.photo.attach(io: file6, filename: "event6", content_type: "image/jpg")
 event6.save
 
-file7 = URI.open("https://www.meyra.com/typo3temp/_processed_/csm_IMG_5260_03509e6586.jpg")
-event7 = Event.create(name: "Rehacare International 2023", address: "Messe Dusseldorf, Düsseldorf", description: "Rehacare is a top international trade fair for rehabilitation, care, prevention, and inclusion.
-It serves as a platform for communication and information exchange among people with disabilities, the elderly, and those in need of nursing care.
-The fair offers a wide range of products, from mobility aids to barrier-free living concepts and sports equipment.",
-date: "13 - 16 September 2023", user_id: user7.id)
-event7.photo.attach(io: file7, filename: "event7", content_type: "image/jpg")
+file7 = URI.open("https://avatars.githubusercontent.com/u/138656152?v=4")
+event7 = Event.create(name: "Yoga Harmony", address: "Waldweg 123, 12487 Berlin", description: "Escape the urban chaos and find inner peace in the heart of Berlin's natural haven. Reserve your spot and embark on a journey of self-discovery and rejuvenation.",
+date: "07 - 09 September 2023", user_id: user7.id)
+event7.photo.attach(io: file7, filename: "event7", content_type: "image/jpeg")
 event7.save
 
 file8 = URI.open("https://www.big-data.ai/sites/default/files/2023-01/3_BAS.jpg")
