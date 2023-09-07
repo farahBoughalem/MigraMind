@@ -12,59 +12,59 @@ Chatroom.destroy_all
 puts "Creating 10 users😊"
 require "open-uri"
 
-file1 = URI.open("https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
-user1 = User.new(first_name: "Emma", last_name: "Johnson", username: "emma_j", email: "emma.johnson@gmail.com", password: "123456", country: "US", bio:
-  "Hello, I'm Emma, a twenty-something American who recently made the move to Germany to explore its culture, cuisine, and picturesque landscapes while documenting my adventures through photography and embracing this exciting new chapter. 🇩🇪📸🌍");
+file1 = URI.open("https://avatars.githubusercontent.com/u/138310166?v=4")
+user1 = User.new(first_name: "Olivia", last_name: "Feldman", username: "olivia", email: "olivia@gmail.com", password: "123456", country: "US", bio:
+  "Hello, I'm Olivia, a twenty-something American who recently made the move to Germany to explore its culture, cuisine, and picturesque landscapes while documenting my adventures through photography and embracing this exciting new chapter. 🇩🇪📸🌍");
 user1.photo.attach(io: file1, filename: "user1", content_type: "image/jpeg")
 user1.save
 
-file2 = URI.open("https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFsZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80")
-user2 = User.new(first_name: "Liam", last_name: "Smith", username: "liam_s", email: "liam.smith@gmail.com", password: "123456", country: "BR", bio: "Hey, I'm Liam, a Brazilian adventurer who's just taken the leap to start a new chapter in Germany, where I'm immersing myself in the rich culture, savoring schnitzels, and navigating the picturesque landscapes while embracing the thrill of this exciting international journey. 🇧🇷🇩🇪🌍")
+file2 = URI.open("https://media.licdn.com/dms/image/D4E03AQHvedzoC6MxMQ/profile-displayphoto-shrink_400_400/0/1690661054695?e=1699488000&v=beta&t=8MQ0exlLfSf_LE-YT_2YSLlPMuJEHq_xkBJmUn6coB8")
+user2 = User.new(first_name: "Romeo", last_name: "Alonso", username: "romeo", email: "romeo@gmail.com", password: "123456", country: "ES", bio: "Hey, I'm Romeo, a Spain adventurer who's just taken the leap to start a new chapter in Germany, where I'm immersing myself in the rich culture, savoring schnitzels, and navigating the picturesque landscapes while embracing the thrill of this exciting international journey. 🇧🇷🇩🇪🌍")
 user2.photo.attach(io: file2, filename: "user2", content_type: "image/jpeg")
 user2.save
 
-file3 = URI.open("https://media.istockphoto.com/id/1317804578/photo/one-businesswoman-headshot-smiling-at-the-camera.jpg?s=612x612&w=0&k=20&c=EqR2Lffp4tkIYzpqYh8aYIPRr-gmZliRHRxcQC5yylY=")
-user3 = User.new(first_name: "Olivia", last_name: "Brown", username: "olivia_b", email: "olivia.brown@gmail.com", password: "123456", country: "CA", bio: "Hello, I'm Olivia, a Canadian explorer now calling Germany home, where I'm savoring the hearty cuisine, embracing the language, and creating unforgettable memories in the heart of Europe. 🇨🇦🇩🇪🌍")
-user3.photo.attach(io: file3, filename: "user3", content_type: "image/jpg")
+file3 = URI.open("https://avatars.githubusercontent.com/u/105309781?v=4")
+user3 = User.new(first_name: "Brunna", last_name: "Monteiro", username: "Brunna", email: "brunna@gmail.com", password: "123456", country: "BR", bio: "Hello, I'm Brunna, a Brazilian explorer now calling Germany home, where I'm savoring the hearty cuisine, embracing the language, and creating unforgettable memories in the heart of Europe. 🇨🇦🇩🇪🌍")
+user3.photo.attach(io: file3, filename: "user3", content_type: "image/jpeg")
 user3.save
 
-file4 = URI.open("https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWFsZSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80")
-user4 = User.new(first_name: "Noah", last_name: "Williams", username: "noah_w", email: "noah.williams@gmail.com", password: "123456", country: "AU", bio: "G'day, I'm Noah, an Aussie adventurer who's swapped the beaches of Australia for the charming streets of Germany, where I'm learning the language, savoring the local brews, and embarking on a European odyssey. 🇦🇺🇩🇪🌍")
+file4 = URI.open("https://avatars.githubusercontent.com/u/119588118?v=4")
+user4 = User.new(first_name: "Iyayi", last_name: "Roland", username: "iyayi", email: "iyayi@gmail.com", password: "123456", country: "NG", bio: "G'day, I'm Iyayi, an Nigerian adventurer who's swapped the beaches of Nigeria for the charming streets of Germany, where I'm learning the language, savoring the local brews, and embarking on a European odyssey. 🇦🇺🇩🇪🌍")
 
 user4.photo.attach(io: file4, filename: "user4", content_type: "image/jpeg")
 user4.save
 
-file5 = URI.open("https://media.istockphoto.com/id/1338134319/photo/portrait-of-young-indian-businesswoman-or-school-teacher-pose-indoors.jpg?s=612x612&w=0&k=20&c=Dw1nKFtnU_Bfm2I3OPQxBmSKe9NtSzux6bHqa9lVZ7A=")
-user5 = User.new(first_name: "Ava", last_name: "Jones", username: "ava_j", email: "ava.jones@gmail.com", password: "123456", country: "IN", bio: "I'm Ava, a 30 year-old from India now calling Germany home, where I'm embracing the culture, sampling hearty sausages, and discovering the beauty of the Rhine Valley. 🇮🇳🇩🇪🌍")
-user5.photo.attach(io: file5, filename: "user5", content_type: "image/jpg")
+file5 = URI.open("https://avatars.githubusercontent.com/u/83554926?v=4")
+user5 = User.new(first_name: "Sebastián", last_name: "Pont Vergés", username: "Sebbi", email: "sebbi@gmail.com", password: "123456", country: "AR", bio: "I'm Sebbi, a 45 year-old from Argentina now calling Germany home, where I'm embracing the culture, sampling hearty sausages, and discovering the beauty of the Rhine Valley. 🇮🇳🇩🇪🌍")
+user5.photo.attach(io: file5, filename: "user5", content_type: "image/jpeg")
 user5.save
 
-file6 = URI.open("https://media.istockphoto.com/id/1154642632/photo/close-up-portrait-of-brunette-woman.jpg?b=1&s=612x612&w=0&k=20&c=7hgSq1L2mpIbpuuw00KELApMpmZfBkZ-RBxn3Qps5zQ=")
-user6 = User.new(first_name: "Isabella", last_name: "Davis", username: "isabella_d", email: "isabella.davis@gmail.com", password: "123456", country: "DZ", bio: "I'm Isabella, an 27 year-old Algerian woman who's ventured to Germany to immerse myself in the diverse culture, relish the delicious pastries, and embark on a European adventure. 🇩🇿🇩🇪🌍")
-user6.photo.attach(io: file6, filename: "user6", content_type: "image/jpg")
+file6 = URI.open("https://avatars.githubusercontent.com/u/126511743?v=4")
+user6 = User.new(first_name: "Farah", last_name: "Boughalem", username: "farah", email: "farah@gmail.com", password: "123456", country: "DZ", bio: "I'm Farah, an 19 year-old Algerian woman who's ventured to Germany to immerse myself in the diverse culture, relish the delicious pastries, and embark on a European adventure. 🇩🇿🇩🇪🌍")
+user6.photo.attach(io: file6, filename: "user6", content_type: "image/jpeg")
 user6.save
 
-file7 = URI.open("https://st4.depositphotos.com/1006137/19992/i/450/depositphotos_199923460-stock-photo-beautiful-brunette-woman-profile-picture.jpg")
-user7 = User.new(first_name: "Sophia", last_name: "Miller", username: "sophia_m", email: "sophia.miller@gmail.com", password: "123456", country: "US", bio: "Hey there, I'm Sophia, a proud American now exploring Germany's enchanting cities, indulging in schnitzels, and creating my own transatlantic story.")
-user7.photo.attach(io: file7, filename: "user7", content_type: "image/jpg")
+file7 = URI.open("https://ca.slack-edge.com/T02NE0241-U05FXRK4PMX-6ab1746472f8-512")
+user7 = User.new(first_name: "Nadja", last_name: "Rünzel", username: "nadja", email: "nadja@gmail.com", password: "123456", country: "SE", bio: "Hey there, I'm Nadja, a berlin-based lawyer with a desire to create my own startup at one point in life. Driven by a passion to widen my horizon, I embark on a coding odyssey.")
+user7.photo.attach(io: file7, filename: "user7", content_type: "image/png")
 user7.save
 
-file8 = URI.open("https://media.istockphoto.com/id/1300512215/photo/headshot-portrait-of-smiling-ethnic-businessman-in-office.jpg?s=612x612&w=0&k=20&c=QjebAlXBgee05B3rcLDAtOaMtmdLjtZ5Yg9IJoiy-VY=")
-user8 = User.create(first_name: "Jackson", last_name: "Wilson", username: "jackson_w", email: "jackson.wilson@gmail.com", password: "123456", country: "PL", bio: "I'm Jackson, a Polish adventurer who's made the leap to Germany, where I'm embracing the vibrant culture, savoring sauerkraut, and discovering the beauty of the Bavarian Alps.")
-user8.photo.attach(io: file8, filename: "user8", content_type: "image/jpg")
+file8 = URI.open("https://avatars.githubusercontent.com/u/95176201?v=4")
+user8 = User.create(first_name: "Sorina", last_name: "Tudor", username: "sorina", email: "sorina@gmail.com", password: "123456", country: "RO", bio: "My name is Sorina Tudor, I am a 29 years old Romanian woman, I have worked as a hairdresser since I came to Berlin 7 years ago and I speak English Italian and Romanian, occasionally also German.")
+user8.photo.attach(io: file8, filename: "user8", content_type: "image/jpeg")
 user8.save
 
-file9 = URI.open("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVuJTIwcHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80")
-user9 = User.create(first_name: "Lucas", last_name: "Moore", username: "lucas_m", email: "lucas.moore@gmail.com", password: "123456", country: "AR", bio: "Hola, I'm Lucas, an Argentinian explorer now making Germany my home, where I'm immersing myself in the rich history, enjoying bratwurst, and falling in love with the picturesque landscapes.")
+file9 = URI.open("https://avatars.githubusercontent.com/u/138442954?v=4")
+user9 = User.create(first_name: "Zuzanna", last_name: "Dobak", username: "zuzanna", email: "zuzanna@gmail.com", password: "123456", country: "PL", bio: "More then ten years as HR professional; career transition to web dev: more input and influence for changes in company, stabil environment and income")
 user9.photo.attach(io: file9, filename: "user9", content_type: "image/jpeg")
 user9.save
 
-file10 = URI.open("https://media.istockphoto.com/id/1372281808/photo/woman-face-profile-young-girl-portrait-with-smooth-healthy-skin-model-facial-side-view-over.jpg?s=612x612&w=0&k=20&c=0sycwPGkFcwXL75kdHCy52c2jX7r9qJwPXqS4J3PZb8=")
-user10 = User.new(first_name: "Mia", last_name: "Taylor", username: "mia_t", email: "mia.taylor@gmail.com", password: "123456", country: "ES", bio: "I'm Mia, a Spanish adventurer who's swapped the sunny shores of Spain for the charm of Germany, where I'm learning the language, savoring schnitzels, and embracing the European experience.")
-user10.photo.attach(io: file10, filename: "user10", content_type: "image/jpg")
+file10 = URI.open("https://avatars.githubusercontent.com/u/137560494?v=4")
+user10 = User.new(first_name: "Richard", last_name: "Copra", username: "richard", email: "richard@gmail.com", password: "123456", country: "US", bio: "I'm Richard, an american adventurer who's swapped the sunny shores of LA for the charm of Germany, where I'm learning the language, savoring schnitzels, and embracing the European experience.")
+user10.photo.attach(io: file10, filename: "user10", content_type: "image/jpeg")
 user10.save
 
-users = [user1, user2, user3, user4, user5, user6, user7, user8, user9, user10  ]
+users = [user1, user2, user3, user4, user5, user6, user7, user8, user9, user10 ]
 
 puts "Done too little too late 😈"
 
