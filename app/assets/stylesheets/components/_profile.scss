@@ -2,38 +2,40 @@
   border: 2px transparent;
   border-radius: 25% 10%;
   background-color: $petroleum;
-  padding: 12rem;
-  position: absolute;
+  // padding: 12rem;
+  // position: absolute;
   margin: 3px;
 }
 
 .grid-profile {
   display: grid;
-  grid-template-columns: auto 1fr 1fr;
-  height: 17svh;
-  width: 80svw;
+  grid-template-columns: auto auto auto;
+  height: 20svh;
   max-width: 100svw;
   max-height: 100svh;
   margin-top: 1rem;
   align-items: end;
+  align-content: center;
 }
 
 .back-btn {
   position: relative;
-  left: 35px;
-  top: -80px;
+  margin-left: 2rem;
+  top: -60px;
+  text-align: center;
 }
 
 .profile-image {
   position: relative;
-  left: 100px;
-  max-width: 100px;
+  max-width: 100svw;
 
   .user-pic {
     display: flex;
     padding: 4px;
     justify-content: center;
-    position: sticky;
+    position: relative;
+    // right: 80px;
+    // top: -30px;
     background-image: $rainbow;
     width: 110px;
 
@@ -61,4 +63,22 @@
   display: flex;
   flex-direction: column;
   gap: 4rem;
+}
+
+.profile-info {
+  text-align: center;
+  position: relative;
+  h3 {
+    font-weight: bold;
+    color: $white;
+  }
+
+  h6 {
+    color: $dark-gray;
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
 }

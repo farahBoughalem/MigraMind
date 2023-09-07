@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :events do
     member do
       post 'join'
+      delete 'unjoin'
     end
   end
 

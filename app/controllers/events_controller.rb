@@ -84,6 +84,13 @@ class EventsController < ApplicationController
     redirect_to event_path(@event), notice: "You have joined the event."
   end
 
+  def unjoin
+    @event = Event.find(params[:id])
+    @attendee = Attendee.find_by(user: current_user, event: @event)
+    @attendee.destroy
+    redirect_to dashboard_index_path, status: :see_other
+  end
+
   private
 
   def event_params

@@ -56,6 +56,11 @@
       <% @joined_events.each do |event| %>
         <%= link_to event_path(event) do %>
           <div class="user-floating-card">
+            <div id="delete">
+              <%= link_to unjoin_event_path(event), data: { turbo_method: :delete } do %>
+                <i class="fa-solid fa-xmark"></i>
+              <% end %>
+            </div>
             <p class="event-title"><%= event.name %></p>
             <div class="small-grey-text">
               <i class="fa-solid fa-clock"></i>
