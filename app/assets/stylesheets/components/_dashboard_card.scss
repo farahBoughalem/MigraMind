@@ -10,24 +10,22 @@
   border-radius: 0 4rem 4rem 0;
   background-color: $petroleum;
   position: relative;
-  right: 30px;
+  width: 95svw;
   top: 0;
   margin-top: 2rem;
 }
 
 .dashboard-profile {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
   height: 15svh;
-  width: 100svw;
+  width: 97svw;
   align-items: center;
   margin: 0;
 }
 
 .user-name {
   text-align: center;
-  margin-left: 40px;
-  position: relative;
-  left: 40px;
 
   h3 {
     color: $white;
@@ -46,8 +44,6 @@
 }
 
 .sticky-image {
-  position: relative;
-  left: 67px;
   max-width: 100px;
 
   .user-image {
