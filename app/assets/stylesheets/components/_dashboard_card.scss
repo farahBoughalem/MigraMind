@@ -35,7 +35,7 @@
   }
 
   h6 {
-    color: $light-gray;
+    color: $username-gray;
   }
 
   a {
@@ -46,8 +46,8 @@
 }
 
 .sticky-image {
-  position: fixed;
-  left: 270px;
+  position: relative;
+  left: 67px;
   max-width: 100px;
 
   .user-image {
