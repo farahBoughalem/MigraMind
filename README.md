@@ -38,12 +38,12 @@ MigraMinds is built using the following technologies:
 - JavaScript ES6
 - Stimulus
 - Simple Form
-- Hotwire
+- turbo
 - Action Cable and WebSocket
 - Redis
 - HTML
 - CSS
-- SCSS
+- SASS
 - Bootstrap
 - Geocoding
 - Mapbox
